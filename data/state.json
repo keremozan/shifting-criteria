@@ -1,0 +1,13 @@
+{
+  "cycle": 0,
+  "document": [],
+  "entities": {
+    "writer": { "id": "writer", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
+    "checker": { "id": "checker", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
+    "cutter": { "id": "cutter", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
+    "logger": { "id": "logger", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
+    "reader": { "id": "reader", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] }
+  },
+  "criteria": { "current": [], "history": [] },
+  "log": []
+}
