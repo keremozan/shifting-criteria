@@ -1,13 +1,228 @@
 {
-  "cycle": 0,
-  "document": [],
+  "cycle": 1,
+  "document": [
+    {
+      "id": "70vr4r0f",
+      "content": "gap passes closed edge",
+      "createdBy": "writer",
+      "createdAt": 1772448719743,
+      "cycle": 1,
+      "operations": [
+        {
+          "id": "8blofe8m",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1772448719743,
+          "cycle": 1,
+          "detail": "produced via S→gap passes closed edge"
+        },
+        {
+          "id": "9a7ei2n7",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1772448719744,
+          "cycle": 1,
+          "detail": "checked against 3 criteria"
+        }
+      ],
+      "alive": true,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1772448719744
+        },
+        {
+          "entity": "checker",
+          "type": "value-tag",
+          "color": "#3b82f6",
+          "content": "hasAdjective: matched (threshold: 1)",
+          "timestamp": 1772448719744
+        }
+      ]
+    },
+    {
+      "id": "zu4so31k",
+      "content": "edge fails a edge",
+      "createdBy": "writer",
+      "createdAt": 1772448719743,
+      "cycle": 1,
+      "operations": [
+        {
+          "id": "xd817o6h",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1772448719743,
+          "cycle": 1,
+          "detail": "produced via S→edge fails a edge"
+        },
+        {
+          "id": "seg8hjz3",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1772448719744,
+          "cycle": 1,
+          "detail": "checked against 3 criteria"
+        }
+      ],
+      "alive": true,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1772448719744
+        }
+      ]
+    },
+    {
+      "id": "ld9oef45",
+      "content": "a shift fails within this gap",
+      "createdBy": "writer",
+      "createdAt": 1772448719743,
+      "cycle": 1,
+      "operations": [
+        {
+          "id": "8rfdwzcs",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1772448719743,
+          "cycle": 1,
+          "detail": "produced via S→a shift fails within this gap"
+        },
+        {
+          "id": "j7836ocu",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1772448719744,
+          "cycle": 1,
+          "detail": "checked against 3 criteria"
+        }
+      ],
+      "alive": true,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1772448719744
+        }
+      ]
+    }
+  ],
   "entities": {
-    "writer": { "id": "writer", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
-    "checker": { "id": "checker", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
-    "cutter": { "id": "cutter", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
-    "logger": { "id": "logger", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] },
-    "reader": { "id": "reader", "cycle": 0, "internalLog": [], "rules": {}, "vocabulary": [] }
+    "writer": {
+      "id": "writer",
+      "cycle": 1,
+      "internalLog": [
+        "[1] produced 3 fragments"
+      ],
+      "rules": {},
+      "vocabulary": [
+        "S",
+        "NP",
+        "VP",
+        "PP",
+        "DET",
+        "N",
+        "ADJ",
+        "V",
+        "P"
+      ]
+    },
+    "checker": {
+      "id": "checker",
+      "cycle": 1,
+      "internalLog": [
+        "CHK[1]:70vr4r0f:PASS(wordCount)",
+        "CHK[1]:70vr4r0f:FAIL(repetition)",
+        "CHK[1]:70vr4r0f:FAIL(hasAdjective)",
+        "CHK[1]:zu4so31k:PASS(wordCount)",
+        "CHK[1]:zu4so31k:FAIL(repetition)",
+        "CHK[1]:zu4so31k:PASS(hasAdjective)",
+        "CHK[1]:ld9oef45:PASS(wordCount)",
+        "CHK[1]:ld9oef45:FAIL(repetition)",
+        "CHK[1]:ld9oef45:PASS(hasAdjective)"
+      ],
+      "rules": {
+        "criteriaThresholds": {
+          "wordCount": 6,
+          "repetition": 2,
+          "hasAdjective": 1
+        }
+      },
+      "vocabulary": []
+    },
+    "cutter": {
+      "id": "cutter",
+      "cycle": 1,
+      "internalLog": [
+        "IDLE[1]:NO_TARGETS"
+      ],
+      "rules": {},
+      "vocabulary": []
+    },
+    "logger": {
+      "id": "logger",
+      "cycle": 1,
+      "internalLog": [
+        "LOG[1]:SUMMARY",
+        "  writer: +3 fragments",
+        "  checker: 3 evaluated, 0 flagged, 3 highlighted",
+        "  document: 3 alive, 0 dead, 3 total"
+      ],
+      "rules": {},
+      "vocabulary": []
+    },
+    "reader": {
+      "id": "reader",
+      "cycle": 1,
+      "internalLog": [
+        "RD[1]:SCAN(3)",
+        "RD[1]:QUIET"
+      ],
+      "rules": {},
+      "vocabulary": []
+    }
   },
-  "criteria": { "current": [], "history": [] },
-  "log": []
+  "criteria": {
+    "current": [],
+    "history": []
+  },
+  "log": [
+    {
+      "cycle": 1,
+      "timestamp": 1772448719743,
+      "entity": "writer",
+      "action": "produced 3 fragments"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1772448719744,
+      "entity": "checker",
+      "action": "checked 3 fragments"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1772448719744,
+      "entity": "cutter",
+      "action": "no targets found"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1772448719744,
+      "entity": "reader",
+      "action": "scanned, nothing found"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1772448719744,
+      "entity": "logger",
+      "action": "LOG[1]:SUMMARY\n  writer: +3 fragments\n  checker: 3 evaluated, 0 flagged, 3 highlighted\n  document: 3 alive, 0 dead, 3 total"
+    }
+  ]
 }

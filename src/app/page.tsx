@@ -43,6 +43,15 @@ export default function Home() {
     }
   };
 
+  const resetState = async () => {
+    try {
+      await fetch('/api/cycle', { method: 'DELETE' });
+      await fetchState();
+    } catch {
+      // silent
+    }
+  };
+
   const aliveCount = state?.document.filter((f) => f.alive).length ?? 0;
   const deadCount = state?.document.filter((f) => !f.alive).length ?? 0;
 
@@ -63,6 +72,12 @@ export default function Home() {
             cycle: {state?.cycle ?? 0}
           </span>
           <button
+            onClick={resetState}
+            className="text-[10px] text-gray-600 border border-gray-800 px-2 py-0.5 hover:bg-gray-900 hover:text-gray-200 transition-colors cursor-pointer"
+          >
+            reset
+          </button>
+          <button
             onClick={runCycle}
             disabled={running}
             className="text-[10px] text-gray-400 border border-gray-800 px-2 py-0.5 hover:bg-gray-900 hover:text-gray-200 disabled:opacity-30 transition-colors cursor-pointer"
@@ -73,16 +88,37 @@ export default function Home() {
       </header>
 
       {/* Criteria */}
-      {state?.criteria.current && state.criteria.current.length > 0 && (
+      {state && (
         <div className="py-2 border-b border-gray-900">
-          <span className="text-[9px] text-gray-700 uppercase tracking-wider mr-2">
-            criteria
+          <span className="text-[9px] text-gray-700 uppercase tracking-wider mr-3">
+            active criteria
           </span>
-          {state.criteria.current.map((c, i) => (
-            <span key={i} className="text-[10px] text-gray-500 mr-3">
-              {c}
-            </span>
-          ))}
+          {(() => {
+            const thresholds = state.entities.checker?.rules?.criteriaThresholds as Record<string, number> | undefined;
+            if (!thresholds || Object.keys(thresholds).length === 0) {
+              return <span className="text-[10px] text-gray-700">none yet (run a cycle)</span>;
+            }
+            const descriptions: Record<string, string> = {
+              wordCount: 'flag if words',
+              repetition: 'highlight if shared words',
+              hasAdjective: 'value if adjectives',
+            };
+            return Object.entries(thresholds).map(([name, val]) => (
+              <span key={name} className="text-[10px] text-gray-500 mr-4">
+                {descriptions[name] || name} &gt;{val}
+              </span>
+            ));
+          })()}
+          {state.criteria.history.length > 0 && (
+            <div className="mt-1">
+              <span className="text-[9px] text-gray-700 mr-2">shifts:</span>
+              {state.criteria.history.map((h, i) => (
+                <span key={i} className="text-[9px] text-gray-600 mr-3">
+                  c{h.cycle} {h.criteria.join(', ')}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       )}
 

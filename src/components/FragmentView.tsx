@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { Fragment, Operation } from '@/lib/types';
+import type { Fragment, Mark, Operation } from '@/lib/types';
 
 const ENTITY_COLORS: Record<string, string> = {
   writer: '#d1d5db',
@@ -11,19 +11,67 @@ const ENTITY_COLORS: Record<string, string> = {
   reader: '#f59e0b',
 };
 
-function OperationRow({ op }: { op: Operation }) {
+function describeOperation(op: Operation): string {
+  if (op.entity === 'writer' && op.type === 'add') {
+    return 'writer produced this fragment';
+  }
+  if (op.entity === 'checker' && op.type === 'value') {
+    return 'checker evaluated';
+  }
+  if (op.entity === 'cutter' && op.type === 'remove') {
+    const match = op.detail.match(/REASON\((\w+)\)/);
+    if (match) {
+      const reason = match[1];
+      if (reason === 'kill_old_unmarked') return 'cutter removed: too old, no marks';
+      if (reason === 'kill_flagged') return 'cutter removed: too many flags';
+      if (reason === 'kill_long') return 'cutter removed: too long';
+      return `cutter removed: ${reason}`;
+    }
+    return 'cutter removed';
+  }
+  if (op.entity === 'reader' && op.type === 'annotate') {
+    return `reader annotated: ${op.detail}`;
+  }
+  return `${op.entity} ${op.type}`;
+}
+
+function describeMark(m: Mark): string {
+  if (m.entity === 'checker') {
+    if (m.type === 'flag' && m.content.includes('wordCount')) {
+      const thresh = m.content.match(/threshold: (\d+)/);
+      return `too many words (>${thresh?.[1] || '?'})`;
+    }
+    if (m.type === 'highlight' && m.content.includes('repetition')) {
+      return 'shares words with another fragment';
+    }
+    if (m.type === 'value-tag' && m.content.includes('hasAdjective')) {
+      return 'contains adjectives';
+    }
+    return m.content;
+  }
+  if (m.entity === 'cutter') {
+    return `killed: ${m.content}`;
+  }
+  if (m.entity === 'reader') {
+    return m.content; // reader notation stays as-is (∴, ≈, etc.)
+  }
+  return m.content;
+}
+
+function MarkBadge({ mark }: { mark: Mark }) {
+  const text = describeMark(mark);
+  const isFlag = mark.type === 'flag';
+  const isComment = mark.type === 'comment';
+
+  if (isComment) return null; // comments rendered separately below
+
   return (
-    <div className="flex gap-2 text-[10px] leading-tight py-0.5">
-      <span className="text-gray-600 shrink-0">c{op.cycle}</span>
-      <span
-        className="shrink-0"
-        style={{ color: ENTITY_COLORS[op.entity] || '#6b7280' }}
-      >
-        {op.entity}
-      </span>
-      <span className="text-gray-500">{op.type}</span>
-      <span className="text-gray-400 truncate">{op.detail}</span>
-    </div>
+    <span
+      className={`text-[9px] px-1 py-px ${isFlag ? 'font-bold' : ''}`}
+      style={{ color: mark.color, opacity: 0.8 }}
+    >
+      {text}
+    </span>
   );
 }
 
@@ -31,85 +79,67 @@ export default function FragmentView({ fragment }: { fragment: Fragment }) {
   const [expanded, setExpanded] = useState(false);
 
   const comments = fragment.marks.filter((m) => m.type === 'comment');
-  const flags = fragment.marks.filter((m) => m.type === 'flag');
-  const valueTags = fragment.marks.filter((m) => m.type === 'value-tag');
-  const highlights = fragment.marks.filter((m) => m.type === 'highlight');
-  const labels = fragment.marks.filter((m) => m.type === 'label');
+  const otherMarks = fragment.marks.filter((m) => m.type !== 'comment');
 
-  const hasMark = fragment.marks.length > 0;
+  // Deduplicate similar marks (e.g. multiple "contains adjectives" from different cycles)
+  const uniqueMarks: Mark[] = [];
+  const seen = new Set<string>();
+  for (const m of otherMarks) {
+    const key = `${m.entity}:${m.type}:${describeMark(m)}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      uniqueMarks.push(m);
+    }
+  }
+
+  // Count how many times checker evaluated this (to show as a small counter)
+  const checkerCycles = fragment.operations.filter(
+    (op) => op.entity === 'checker' && op.type === 'value'
+  ).length;
 
   return (
     <div
-      className="group border-l border-transparent hover:border-gray-800 pl-2 py-1 cursor-pointer"
+      className="group border-l-2 border-transparent hover:border-gray-800 pl-2 py-1.5 cursor-pointer"
       onClick={() => setExpanded(!expanded)}
     >
-      {/* Main content line */}
-      <div className="flex items-start gap-2">
-        <span className="text-gray-700 text-[10px] leading-5 shrink-0 select-none">
+      {/* Content line */}
+      <div className="flex items-baseline gap-2">
+        <span className="text-gray-700 text-[10px] shrink-0 select-none">
           c{fragment.cycle}
         </span>
 
         <span
-          className={`leading-5 text-sm ${
+          className={`text-sm ${
             !fragment.alive
-              ? 'line-through text-gray-600 opacity-50'
+              ? 'line-through text-gray-600 opacity-40'
               : 'text-gray-200'
           }`}
         >
           {fragment.content}
         </span>
-
-        {/* Inline mark indicators */}
-        {hasMark && (
-          <span className="flex items-center gap-1 shrink-0 mt-1">
-            {flags.map((m, i) => (
-              <span
-                key={`flag-${i}`}
-                className="inline-block w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: m.color }}
-                title={m.content}
-              />
-            ))}
-            {highlights.map((m, i) => (
-              <span
-                key={`hl-${i}`}
-                className="inline-block w-1.5 h-1.5 rounded-sm"
-                style={{ backgroundColor: m.color }}
-                title={m.content}
-              />
-            ))}
-            {valueTags.map((m, i) => (
-              <span
-                key={`vt-${i}`}
-                className="text-[9px] px-1 rounded"
-                style={{
-                  color: m.color,
-                  border: `1px solid ${m.color}33`,
-                }}
-              >
-                {m.content}
-              </span>
-            ))}
-            {labels.map((m, i) => (
-              <span
-                key={`lb-${i}`}
-                className="text-[9px] px-1 opacity-70"
-                style={{ color: m.color }}
-              >
-                {m.content}
-              </span>
-            ))}
-          </span>
-        )}
       </div>
 
-      {/* Reader comments (annotations) — always visible */}
+      {/* Marks — readable descriptions */}
+      {uniqueMarks.length > 0 && (
+        <div className="ml-8 mt-0.5 flex flex-wrap gap-x-3 gap-y-0.5">
+          {uniqueMarks.map((m, i) => (
+            <MarkBadge key={i} mark={m} />
+          ))}
+          {checkerCycles > 1 && (
+            <span className="text-[9px] text-gray-700">
+              checked {checkerCycles}x
+            </span>
+          )}
+        </div>
+      )}
+
+      {/* Reader annotations — symbolic notation, always visible */}
       {comments.length > 0 && (
         <div className="ml-8 mt-0.5">
           {comments.map((m, i) => (
             <div
-              key={`comment-${i}`}
-              className="text-[11px] leading-4 italic"
+              key={i}
+              className="text-[11px] leading-4"
               style={{ color: m.color }}
             >
               {m.content}
@@ -118,14 +148,19 @@ export default function FragmentView({ fragment }: { fragment: Fragment }) {
         </div>
       )}
 
-      {/* Expanded operation history */}
+      {/* Expanded: full operation timeline */}
       {expanded && fragment.operations.length > 0 && (
-        <div className="ml-8 mt-1 pt-1 border-t border-gray-900">
+        <div className="ml-8 mt-1.5 pt-1 border-t border-gray-900 space-y-0.5">
           {fragment.operations
             .slice()
             .sort((a, b) => a.timestamp - b.timestamp)
             .map((op) => (
-              <OperationRow key={op.id} op={op} />
+              <div key={op.id} className="text-[10px] leading-tight flex gap-2">
+                <span className="text-gray-700 shrink-0">c{op.cycle}</span>
+                <span style={{ color: ENTITY_COLORS[op.entity] || '#6b7280' }}>
+                  {describeOperation(op)}
+                </span>
+              </div>
             ))}
         </div>
       )}
