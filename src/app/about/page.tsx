@@ -41,7 +41,7 @@ export default function AboutPage() {
         </p>
 
         <p>
-          Press cycle to begin. Each viewer gets their own sequence. Nothing is saved.
+          Press <s className="text-gray-600">cycle</s> run to begin. Each viewer gets their own sequence. Nothing is saved.
         </p>
 
         <div className="border-t border-gray-800 pt-4 text-[10px] text-gray-600">
