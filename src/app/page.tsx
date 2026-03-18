@@ -37,6 +37,10 @@ export default function Home() {
     setState((prev) => runCycle(prev, sources));
   };
 
+  const handleReset = () => {
+    setState(createBlankState());
+  };
+
   const aliveCount = state.document.filter((f) => f.alive).length;
   const deadCount = state.document.filter((f) => !f.alive).length;
 
@@ -60,6 +64,12 @@ export default function Home() {
             <span className="text-[10px] text-gray-500">
               cycle {state.cycle}
             </span>
+            <button
+              onClick={handleReset}
+              className="text-[10px] text-gray-600 hover:text-gray-400 transition-colors cursor-pointer"
+            >
+              reset
+            </button>
             <button
               onClick={handleCycle}
               className="text-[10px] text-gray-400 border border-gray-700 px-2 py-0.5 rounded hover:bg-gray-900 hover:text-gray-300 transition-colors cursor-pointer"
