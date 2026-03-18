@@ -34,9 +34,21 @@ const LIFECYCLE_STYLES: Record<LifecycleState, { border: string; label: string; 
   dead: { border: '#f87171', label: 'dead', textClass: 'text-gray-600 line-through opacity-40' },
 };
 
-function describeOperation(op: Operation): string {
-  if (op.entity === 'writer' && op.type === 'add') return 'writer produced this fragment';
-  if (op.entity === 'checker' && op.type === 'value') return 'checker evaluated';
+function describeOperation(op: Operation, marks?: Mark[]): string {
+  if (op.entity === 'writer' && op.type === 'add') return 'writer sourced this fragment';
+  if (op.entity === 'checker' && op.type === 'value') {
+    if (!marks) return 'checker evaluated';
+    const checkerMarks = marks.filter((m) => m.entity === 'checker');
+    if (checkerMarks.length === 0) return 'checker evaluated: all passed';
+    const findings = checkerMarks.map((m) => {
+      if (m.type === 'flag' && m.content.includes('wordCount')) return 'flagged word count';
+      if (m.type === 'highlight' && m.content.includes('repetition')) return 'highlighted repetition';
+      if (m.type === 'value-tag' && m.content.includes('hasAdjective')) return 'tagged adjectives';
+      return m.type;
+    });
+    const unique = [...new Set(findings)];
+    return `checker: ${unique.join(', ')}`;
+  }
   if (op.entity === 'cutter' && op.type === 'remove') {
     const match = op.detail.match(/REASON\((\w+)\)/);
     if (match) {
@@ -141,7 +153,7 @@ export default function FragmentView({ fragment, currentCycle }: { fragment: Fra
           {fragment.operations.slice().sort((a, b) => a.timestamp - b.timestamp).map((op) => (
             <div key={op.id} className="text-[10px] leading-tight flex gap-2">
               <span className="text-gray-600 shrink-0">{fmtRun(op.cycle, 'fragment')}</span>
-              <span style={{ color: ENTITY_COLORS[op.entity] || '#6b7280' }}>{describeOperation(op)}</span>
+              <span style={{ color: ENTITY_COLORS[op.entity] || '#6b7280' }}>{describeOperation(op, fragment.marks)}</span>
             </div>
           ))}
         </div>
