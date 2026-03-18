@@ -27,27 +27,42 @@ Next.js, TypeScript, Tailwind. Runs on port 3456 (`npm run dev`).
 - `/diagrams` -- HTML diagrams referenced from the metalog.
 
 ### Data files (all in `data/`)
-- `state.json` -- System state (fragments, entities, criteria). Persisted after each cycle.
-- `metalog.json` -- Conversation entries. Append-only. Served via `/api/metalog`.
-- `metalog-threads.json` -- Thread groupings for the metalog (summary, subtext, tags). Updated alongside metalog.
-- `highlights.json` -- User highlights and comments on metalog text. Saved via `/api/highlights`.
-- `diagrams.json` -- HTML diagrams. Served via `/api/diagrams`.
+- `state.json` -- System state (fragments, entities, criteria). Local dev only.
+- `metalog.json` -- Conversation entries. Append-only. Static import at build time.
+- `metalog-threads.json` -- Thread groupings. Updated alongside metalog.
+- `highlights.json` -- Kerem's highlights on the metalog. Static, baked into build.
+- `rulebook-highlights.json` -- Kerem's highlights on the rulebook.
+- `diagrams.json` -- ASCII diagrams with supersession tracking.
+- `sources.json` -- Source sentences for the Writer. Curated by the poet.
+- `snapshots.json` -- Archived system states with convention tags.
+- `taxonomy.json` -- Vocabulary definitions. Deprecated terms tracked.
 
 ### Source structure
 - `src/lib/types.ts` -- Core types (Fragment, Operation, Mark, EntityState, SystemState)
-- `src/lib/engine.ts` -- Cycle orchestration (Writer -> Checker -> Cutter -> Reader -> Narrator -> Logger)
-- `src/lib/entities/` -- Entity implementations
+- `src/lib/engine.ts` -- Generation orchestration (Writer -> Checker -> Cutter -> Reader -> Narrator -> Logger)
+- `src/lib/entities/` -- Entity implementations (writer, checker, cutter, reader, narrator, logger)
+- `src/lib/editor.ts` -- Editor agent (display language revisions)
+- `src/lib/taxonomy.ts` -- Taxonomist agent (display formatting)
+- `src/lib/poet.ts` -- Poet agent (source pool curation scoring)
+- `src/lib/data.ts` -- Static data barrel (imports all JSON files)
 - `src/lib/metalog.ts` -- MetalogEntry type definition only
-- `src/lib/changelog.ts` -- Changelog entries (hardcoded, not API-served)
-- `src/components/` -- UI components (DocumentView, FragmentView, EntityPanel, SystemLog, HighlightTool, ThreadSidebar)
-- `src/app/api/` -- API routes for cycle, metalog, highlights, diagrams, threads
+- `src/lib/changelog.ts` -- Changelog entries
+- `src/components/` -- UI components (DocumentView, FragmentView, EntityPanel, SystemLog, HighlightTool, PageHighlights)
+- `src/app/api/snapshots/` -- Snapshot save (local dev only, ignored in static export)
+- `src/app/api/sources/` -- Source pool add (local dev only, used by poet page)
+
+### Agent categories
+- **Generation entities** -- run in the pipeline each generation: writer, checker, cutter, reader, narrator, logger
+- **Observers** -- annotate without changing: architect, threads, editor, taxonomist, kerem
+- **Curators** -- shape inputs between sessions: poet
 
 ### Levels (from bottom to top)
-1. **Document** -- fragments living and dying
-2. **Operations** -- marks, flags, cuts, annotations
+1. **Document** -- fragments active and removed
+2. **Operations** -- marks, flags, removals, annotations
 3. **Narrative** -- Narrator's plain-language recap
 4. **Metalog** -- kerem + architect conversation (ASIDE to enter)
-5. **Highlights** -- kerem's private marks on the metalog text
+5. **Highlights** -- kerem's marks on the metalog and rulebook
+6. **Rulebook** -- taxonomy, rules, character roster (changes shown with strikethrough)
 
 Changelog sits outside this stack.
 

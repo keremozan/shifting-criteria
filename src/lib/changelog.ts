@@ -330,4 +330,12 @@ export const changelog: ChangelogEntry[] = [
     title: 'Three agent categories',
     description: 'Agents split into three groups: generation entities (run in pipeline), observers (annotate without changing), curators (shape inputs between sessions). Poet moved from observers to curators.',
   },
+  {
+    id: 40,
+    date: '2026-03-19',
+    time: '05:30',
+    tag: 'fix',
+    title: 'Reader duplicate annotations',
+    description: 'Reader now checks if a pattern annotation already exists on a fragment before adding another. Prevents echo/survival/void/density annotations accumulating over generations.',
+  },
 ];
