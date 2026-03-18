@@ -62,7 +62,7 @@ function describeMark(m: Mark): string {
     if (m.type === 'value-tag' && m.content.includes('hasAdjective')) return 'contains adjectives';
     return m.content;
   }
-  if (m.entity === 'cutter') return `killed: ${m.content}`;
+  if (m.entity === 'cutter') return `removed: ${m.content}`;
   if (m.entity === 'reader') return m.content;
   return m.content;
 }
@@ -74,17 +74,17 @@ const MARK_COLORS: Record<string, string> = {
   label: '#6b7280',
 };
 
-function MarkBadge({ mark }: { mark: Mark }) {
+function MarkBadge({ mark, cycle }: { mark: Mark; cycle: number }) {
   const text = describeMark(mark);
   if (mark.type === 'comment') return null;
   const color = MARK_COLORS[mark.type] || '#6b7280';
+  const revised = editorRevise(text, cycle);
   return (
     <span
       className={`text-[9px] px-1.5 py-px rounded ${mark.type === 'flag' ? 'font-medium' : ''}`}
       style={{ color, backgroundColor: `${color}15`, border: `1px solid ${color}30` }}
-    >
-      {text}
-    </span>
+      dangerouslySetInnerHTML={{ __html: revised }}
+    />
   );
 }
 
@@ -123,7 +123,7 @@ export default function FragmentView({ fragment, currentCycle }: { fragment: Fra
 
       {uniqueMarks.length > 0 && (
         <div className="ml-8 mt-1 flex flex-wrap gap-x-2 gap-y-1">
-          {uniqueMarks.map((m, i) => <MarkBadge key={i} mark={m} />)}
+          {uniqueMarks.map((m, i) => <MarkBadge key={i} mark={m} cycle={fragment.cycle} />)}
           {checkerCycles > 1 && <span className="text-[9px] text-gray-600">checked {checkerCycles}x</span>}
         </div>
       )}

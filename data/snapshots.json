@@ -1847,5 +1847,162 @@
         "Document holds 1 living fragment, 0 dead."
       ]
     }
+  },
+  {
+    "id": "snap-1773865653136",
+    "date": "2026-03-18",
+    "time": "11:27 PM",
+    "cycle": 1,
+    "alive": 1,
+    "dead": 0,
+    "state": {
+      "cycle": 1,
+      "document": [
+        {
+          "id": "szz23mci",
+          "content": "Technically correct, conceptually empty.",
+          "createdBy": "writer",
+          "createdAt": 1773865644209,
+          "cycle": 1,
+          "operations": [
+            {
+              "id": "0i5rj4rz",
+              "entity": "writer",
+              "type": "add",
+              "timestamp": 1773865644209,
+              "cycle": 1,
+              "detail": "sourced: \"Technically correct, conceptually empty....\""
+            },
+            {
+              "id": "kcf4x5rr",
+              "entity": "checker",
+              "type": "value",
+              "timestamp": 1773865644209,
+              "cycle": 1,
+              "detail": "checked against 3 criteria"
+            }
+          ],
+          "alive": true,
+          "marks": []
+        }
+      ],
+      "entities": {
+        "writer": {
+          "id": "writer",
+          "cycle": 1,
+          "internalLog": [
+            "[1] sourced 1 fragments"
+          ],
+          "rules": {},
+          "vocabulary": []
+        },
+        "checker": {
+          "id": "checker",
+          "cycle": 1,
+          "internalLog": [
+            "CHK[1]:szz23mci:PASS(wordCount)",
+            "CHK[1]:szz23mci:PASS(repetition)",
+            "CHK[1]:szz23mci:PASS(hasAdjective)"
+          ],
+          "rules": {
+            "criteriaThresholds": {
+              "wordCount": 6,
+              "repetition": 2,
+              "hasAdjective": 1
+            }
+          },
+          "vocabulary": []
+        },
+        "cutter": {
+          "id": "cutter",
+          "cycle": 1,
+          "internalLog": [
+            "IDLE[1]:NO_TARGETS"
+          ],
+          "rules": {},
+          "vocabulary": []
+        },
+        "logger": {
+          "id": "logger",
+          "cycle": 1,
+          "internalLog": [
+            "LOG[1]:SUMMARY",
+            "  writer: +1 fragments",
+            "  checker: 1 evaluated, 0 flagged, 1 highlighted",
+            "  document: 1 alive, 0 dead, 1 total"
+          ],
+          "rules": {},
+          "vocabulary": []
+        },
+        "reader": {
+          "id": "reader",
+          "cycle": 1,
+          "internalLog": [
+            "RD[1]:SCAN(1)",
+            "RD[1]:QUIET"
+          ],
+          "rules": {},
+          "vocabulary": []
+        },
+        "narrator": {
+          "id": "narrator",
+          "cycle": 1,
+          "internalLog": [
+            "NAR[1]:5 lines"
+          ],
+          "rules": {},
+          "vocabulary": []
+        }
+      },
+      "criteria": {
+        "current": [],
+        "history": []
+      },
+      "log": [
+        {
+          "cycle": 1,
+          "timestamp": 1773865644209,
+          "entity": "writer",
+          "action": "sourced 1 fragments"
+        },
+        {
+          "cycle": 1,
+          "timestamp": 1773865644209,
+          "entity": "checker",
+          "action": "checked 1 fragments"
+        },
+        {
+          "cycle": 1,
+          "timestamp": 1773865644209,
+          "entity": "cutter",
+          "action": "no targets found"
+        },
+        {
+          "cycle": 1,
+          "timestamp": 1773865644209,
+          "entity": "reader",
+          "action": "scanned, nothing found"
+        },
+        {
+          "cycle": 1,
+          "timestamp": 1773865644209,
+          "entity": "narrator",
+          "action": "narrated gen1"
+        },
+        {
+          "cycle": 1,
+          "timestamp": 1773865644209,
+          "entity": "logger",
+          "action": "LOG[1]:SUMMARY\n  writer: +1 fragments\n  checker: 1 evaluated, 0 flagged, 1 highlighted\n  document: 1 alive, 0 dead, 1 total"
+        }
+      ],
+      "narrative": [
+        "Writer sourced \"Technically correct, conceptually empty.\".",
+        "Checker evaluated 1 fragments. All passed.",
+        "Cutter found nothing to remove.",
+        "Reader scanned the document. No patterns found.",
+        "Document holds 1 active fragment, 0 removed."
+      ]
+    }
   }
 ]

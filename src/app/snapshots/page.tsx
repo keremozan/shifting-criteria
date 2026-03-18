@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { snapshots } from '@/lib/data';
-import { editorRevise } from '@/lib/editor';
-import { fmtRun } from '@/lib/taxonomy';
+
+// Snapshots are archival. No editor revisions, no taxonomy rewrites.
+// They render exactly as they were saved.
 
 interface Fragment {
   id: string;
@@ -15,21 +16,14 @@ interface Fragment {
   operations: { id: string; entity: string; type: string; cycle: number; detail: string }[];
 }
 
-const LIFECYCLE_COLORS: Record<string, string> = {
-  new: '#4ade80',
-  flagged: '#fbbf24',
-  surviving: '#a78bfa',
-  removed: '#f87171',
-};
-
-function getLifecycle(f: Fragment, snapCycle: number) {
-  if (!f.alive) return { label: 'removed', color: LIFECYCLE_COLORS.removed };
-  if (f.cycle === snapCycle) return { label: 'new', color: LIFECYCLE_COLORS.new };
+function getLifecycleColor(f: Fragment, snapCycle: number) {
+  if (!f.alive) return '#f87171';
+  if (f.cycle === snapCycle) return '#4ade80';
   const hasFlagMark = f.marks.some((m) => m.type === 'flag');
   const age = snapCycle - f.cycle;
-  if (hasFlagMark && age > 1) return { label: 'surviving', color: LIFECYCLE_COLORS.surviving };
-  if (hasFlagMark) return { label: 'flagged', color: LIFECYCLE_COLORS.flagged };
-  return { label: '', color: 'transparent' };
+  if (hasFlagMark && age > 1) return '#a78bfa';
+  if (hasFlagMark) return '#fbbf24';
+  return 'transparent';
 }
 
 function getCutReason(f: Fragment) {
@@ -88,8 +82,6 @@ export default function SnapshotsPage() {
           const isOpen = snap.id === expandedId;
           const cycle = snap.state.cycle;
           const doc = snap.state.document as Fragment[];
-          const living = doc.filter((f) => f.alive);
-          const dead = doc.filter((f) => !f.alive);
 
           return (
             <div key={snap.id} className="border-b border-gray-800/50">
@@ -98,18 +90,16 @@ export default function SnapshotsPage() {
                 onClick={() => setExpandedId(isOpen ? null : snap.id)}
               >
                 <div className="flex items-baseline gap-3">
-                  <span className="text-[11px] text-gray-300 font-medium">{fmtRun(snap.cycle, 'snapshot')}</span>
+                  <span className="text-[11px] text-gray-300 font-medium">cycle {snap.cycle}</span>
                   <span className="text-[9px] text-gray-600">{snap.date} {snap.time}</span>
-                  <span className="text-[9px] text-gray-600 ml-auto"
-                    dangerouslySetInnerHTML={{
-                      __html: editorRevise(`${snap.alive} alive / ${snap.dead} dead`, cycle)
-                    }}
-                  />
+                  <span className="text-[9px] text-gray-600 ml-auto">
+                    {snap.alive} alive / {snap.dead} dead
+                  </span>
                 </div>
                 {snap.state.narrative && snap.state.narrative.length > 0 && (
-                  <div className="mt-2 text-[10px] text-gray-500 leading-relaxed"
-                    dangerouslySetInnerHTML={{ __html: editorRevise(snap.state.narrative[0], cycle) }}
-                  />
+                  <div className="mt-2 text-[10px] text-gray-500 leading-relaxed">
+                    {snap.state.narrative[0]}
+                  </div>
                 )}
               </div>
 
@@ -118,9 +108,7 @@ export default function SnapshotsPage() {
                   {snap.state.narrative && snap.state.narrative.length > 0 && (
                     <div className="space-y-0.5 pl-3 border-l border-gray-800">
                       {snap.state.narrative.map((line: string, i: number) => (
-                        <div key={i} className="text-[10px] text-gray-500 leading-relaxed"
-                          dangerouslySetInnerHTML={{ __html: editorRevise(line, cycle) }}
-                        />
+                        <div key={i} className="text-[10px] text-gray-500 leading-relaxed">{line}</div>
                       ))}
                     </div>
                   )}
@@ -129,20 +117,26 @@ export default function SnapshotsPage() {
                     <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-2">document</div>
                     <div className="space-y-0">
                       {doc.map((f) => {
-                        const lc = getLifecycle(f, cycle);
+                        const color = getLifecycleColor(f, cycle);
                         const cutReason = getCutReason(f);
                         const checkerMarks = getCheckerMarks(f);
                         const readerNotes = getReaderAnnotations(f);
 
                         return (
-                          <div key={f.id} className="py-2 pl-3 border-l-2" style={{ borderColor: lc.color }}>
+                          <div key={f.id} className="py-2 pl-3 border-l-2" style={{ borderColor: color }}>
                             <div className="flex items-baseline gap-2">
-                              <span className="text-[9px] text-gray-600 shrink-0">{fmtRun(f.cycle, 'fragment')}</span>
-                              {lc.label && (
+                              <span className="text-[9px] text-gray-600 shrink-0">c{f.cycle}</span>
+                              {!f.alive && (
                                 <span className="text-[8px] uppercase tracking-wider shrink-0 px-1 py-px rounded"
-                                  style={{ color: lc.color, backgroundColor: `${lc.color}15`, border: `1px solid ${lc.color}30` }}
-                                  dangerouslySetInnerHTML={{ __html: editorRevise(lc.label, f.cycle) }}
-                                />
+                                  style={{ color: '#f87171', backgroundColor: '#f8717115', border: '1px solid #f8717130' }}>
+                                  dead
+                                </span>
+                              )}
+                              {f.alive && f.cycle === cycle && (
+                                <span className="text-[8px] uppercase tracking-wider shrink-0 px-1 py-px rounded"
+                                  style={{ color: '#4ade80', backgroundColor: '#4ade8015', border: '1px solid #4ade8030' }}>
+                                  new
+                                </span>
                               )}
                               <span className={`text-[11px] ${f.alive ? 'text-gray-300' : 'text-gray-600 line-through opacity-50'}`}>
                                 {f.content}
@@ -158,9 +152,9 @@ export default function SnapshotsPage() {
                                 ))}
                                 {cutReason && (
                                   <span className="text-[8px] text-red-400/60 px-1.5 py-px rounded"
-                                    style={{ backgroundColor: '#f8717115', border: '1px solid #f8717130' }}
-                                    dangerouslySetInnerHTML={{ __html: editorRevise(cutReason, f.cycle) }}
-                                  />
+                                    style={{ backgroundColor: '#f8717115', border: '1px solid #f8717130' }}>
+                                    {cutReason}
+                                  </span>
                                 )}
                               </div>
                             )}
@@ -190,7 +184,7 @@ export default function SnapshotsPage() {
                       <div className="mt-1 space-y-0.5">
                         {snap.state.criteria.history.map((h: any, i: number) => (
                           <div key={i} className="text-[9px] text-gray-600">
-                            {fmtRun(h.cycle, 'snapshot')}: {h.criteria.join(', ')}
+                            cycle {h.cycle}: {h.criteria.join(', ')}
                           </div>
                         ))}
                       </div>
