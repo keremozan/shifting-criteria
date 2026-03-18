@@ -183,5 +183,17 @@
       "stakes",
       "self-criticism"
     ]
+  },
+  {
+    "id": 17,
+    "startEntry": 60,
+    "endEntry": 66,
+    "summary": "running it 30 times / did it produce anything?",
+    "subtext": "the metalog is the work. the system is the excuse. three options: leave it, keep going, show it. all three can happen at once.",
+    "tags": [
+      "stakes",
+      "content vs form",
+      "convention"
+    ]
   }
 ]
