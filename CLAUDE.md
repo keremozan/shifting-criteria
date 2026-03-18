@@ -71,6 +71,12 @@ When kerem says **ASIDE**, everything that follows is metalog territory. No matt
 
 When kerem is NOT in ASIDE mode, work normally on the codebase.
 
+## Deployment
+
+To deploy: `npx next build && npx wrangler pages deploy out --project-name shifting-criteria`
+
+Every deploy must include a fresh build so all data files (snapshots, metalog, threads, highlights, sources, taxonomy, diagrams) are current on the public site. Do not deploy stale builds.
+
 ## Tech changes
 
 Log all technical changes to `src/lib/changelog.ts`.
