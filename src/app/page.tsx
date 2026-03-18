@@ -38,6 +38,19 @@ export default function Home() {
     setState((prev) => runCycle(prev, sources));
   };
 
+  const handleSnapshot = () => {
+    fetch('/api/snapshots', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        cycle: state.cycle,
+        alive: state.document.filter((f) => f.alive).length,
+        dead: state.document.filter((f) => !f.alive).length,
+        state,
+      }),
+    }).catch(() => {});
+  };
+
   const handleReset = () => {
     setState(createBlankState());
   };
@@ -65,6 +78,12 @@ export default function Home() {
             <span className="text-[10px] text-gray-500">
               {fmtRun(state.cycle)}
             </span>
+            <button
+              onClick={handleSnapshot}
+              className="text-[10px] text-gray-600 hover:text-gray-400 transition-colors cursor-pointer"
+            >
+              snapshot
+            </button>
             <button
               onClick={handleReset}
               className="text-[10px] text-gray-600 hover:text-gray-400 transition-colors cursor-pointer"
