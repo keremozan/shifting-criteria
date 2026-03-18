@@ -20,6 +20,7 @@ export async function POST(req: Request) {
     cycle: body.cycle,
     alive: body.alive,
     dead: body.dead,
+    convention: 'generation',
     state: body.state,
   };
 

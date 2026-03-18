@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { snapshots } from '@/lib/data';
 
-// Snapshots are archival. No editor revisions, no taxonomy rewrites.
-// They render exactly as they were saved.
+// Snapshots are archival. Each snapshot uses the naming convention
+// that was active when it was saved. Old ones say "cycle" and "alive/dead".
+// New ones (convention: "generation") say "gen-" and "active/removed".
 
 interface Fragment {
   id: string;
@@ -82,6 +83,16 @@ export default function SnapshotsPage() {
           const isOpen = snap.id === expandedId;
           const cycle = snap.state.cycle;
           const doc = snap.state.document as Fragment[];
+          const isGen = (snap as any).convention === 'generation';
+          const countLabel = isGen
+            ? `gen-${snap.cycle}:${snap.alive}a:${snap.dead}r`
+            : `cycle ${snap.cycle}`;
+          const statsLabel = isGen
+            ? ''
+            : `${snap.alive} alive / ${snap.dead} dead`;
+          const originPrefix = isGen ? 'g' : 'c';
+          const removedLabel = isGen ? 'removed' : 'dead';
+          const activeLabel = isGen ? 'active' : 'alive';
 
           return (
             <div key={snap.id} className="border-b border-gray-800/50">
@@ -90,11 +101,11 @@ export default function SnapshotsPage() {
                 onClick={() => setExpandedId(isOpen ? null : snap.id)}
               >
                 <div className="flex items-baseline gap-3">
-                  <span className="text-[11px] text-gray-300 font-medium">cycle {snap.cycle}</span>
+                  <span className="text-[11px] text-gray-300 font-medium">{countLabel}</span>
                   <span className="text-[9px] text-gray-600">{snap.date} {snap.time}</span>
-                  <span className="text-[9px] text-gray-600 ml-auto">
-                    {snap.alive} alive / {snap.dead} dead
-                  </span>
+                  {statsLabel && (
+                    <span className="text-[9px] text-gray-600 ml-auto">{statsLabel}</span>
+                  )}
                 </div>
                 {snap.state.narrative && snap.state.narrative.length > 0 && (
                   <div className="mt-2 text-[10px] text-gray-500 leading-relaxed">
@@ -125,11 +136,11 @@ export default function SnapshotsPage() {
                         return (
                           <div key={f.id} className="py-2 pl-3 border-l-2" style={{ borderColor: color }}>
                             <div className="flex items-baseline gap-2">
-                              <span className="text-[9px] text-gray-600 shrink-0">c{f.cycle}</span>
+                              <span className="text-[9px] text-gray-600 shrink-0">{originPrefix}{f.cycle}</span>
                               {!f.alive && (
                                 <span className="text-[8px] uppercase tracking-wider shrink-0 px-1 py-px rounded"
                                   style={{ color: '#f87171', backgroundColor: '#f8717115', border: '1px solid #f8717130' }}>
-                                  dead
+                                  {removedLabel}
                                 </span>
                               )}
                               {f.alive && f.cycle === cycle && (
@@ -184,7 +195,7 @@ export default function SnapshotsPage() {
                       <div className="mt-1 space-y-0.5">
                         {snap.state.criteria.history.map((h: any, i: number) => (
                           <div key={i} className="text-[9px] text-gray-600">
-                            cycle {h.cycle}: {h.criteria.join(', ')}
+                            {isGen ? `gen-${h.cycle}` : `cycle ${h.cycle}`}: {h.criteria.join(', ')}
                           </div>
                         ))}
                       </div>

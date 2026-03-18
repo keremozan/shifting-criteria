@@ -265,4 +265,28 @@ export const changelog: ChangelogEntry[] = [
     title: 'Rulebook page',
     description: 'New /rulebook route. Displays taxonomy terms and system rules including the archival rule for snapshots.',
   },
+  {
+    id: 32,
+    date: '2026-03-19',
+    time: '04:20',
+    tag: 'system',
+    title: 'Visibility and forward-only rules',
+    description: 'Every change stays visible with strikethrough. New rules apply forward only. Old snapshots keep their original language. Rulebook updated with both rules.',
+  },
+  {
+    id: 33,
+    date: '2026-03-19',
+    time: '04:25',
+    tag: 'system',
+    title: 'Convention-aware snapshots',
+    description: 'Snapshots now record which naming convention was active when saved. Old snapshots (no convention field) render with "cycle", "alive", "dead". New snapshots (convention: "generation") render with "gen-", "active", "removed".',
+  },
+  {
+    id: 34,
+    date: '2026-03-19',
+    time: '04:25',
+    tag: 'ui',
+    title: 'Editor revisions on fragment marks',
+    description: 'MarkBadge component now passes through the Editor for gen 4+. Cutter marks say "removed:" instead of "killed:". Narrator uses taxonomy terms.',
+  },
 ];
