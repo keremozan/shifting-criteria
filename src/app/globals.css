@@ -97,6 +97,24 @@ body {
   display: block;
 }
 
+/* Highlight badges for mobile */
+.hl-badge {
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 8px;
+  line-height: 1;
+  background: #374151;
+  color: #d1d5db;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
 /* Editor agent revisions */
 .editor-revision {
   font-size: inherit;

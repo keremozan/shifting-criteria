@@ -44,8 +44,8 @@ export default function Home() {
     <div className="min-h-screen flex flex-col max-w-4xl mx-auto px-4">
       {/* Header */}
       <header className="py-4 border-b border-gray-800 space-y-2">
-        <div className="flex items-baseline justify-between">
-          <div className="flex items-baseline gap-4">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <div className="flex items-baseline gap-3">
             <h1 className="text-[11px] text-gray-500 tracking-[0.15em] uppercase">
               ETSC
             </h1>
@@ -68,7 +68,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <nav className="flex items-baseline gap-4 text-[10px]">
+        <nav className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-[10px]">
           <span className="text-gray-600">system</span>
           <Link href="/snapshots" className="text-gray-500 hover:text-gray-300 transition-colors">snapshots</Link>
           <Link href="/changelog" className="text-gray-500 hover:text-gray-300 transition-colors">changelog</Link>
@@ -146,7 +146,7 @@ export default function Home() {
 
       {/* Agents */}
       <section className="border-t border-gray-800 py-4">
-        <div className="flex gap-8">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
           <div className="flex-1">
             <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">cycle</div>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
@@ -156,7 +156,7 @@ export default function Home() {
               })}
             </div>
           </div>
-          <div className="w-px bg-gray-800" />
+          <div className="hidden sm:block w-px bg-gray-800" />
           <div>
             <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">observers</div>
             <div className="flex flex-wrap gap-x-4 gap-y-1">

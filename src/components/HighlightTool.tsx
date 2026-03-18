@@ -49,6 +49,7 @@ export default function HighlightLayer() {
   const [viewerHighlights, setViewerHighlights] = useState<HighlightData[]>([]);
   const [toolbar, setToolbar] = useState<{ x: number; y: number } | null>(null);
   const [activeId, setActiveId] = useState<string | null>(null);
+  const [mobilePopup, setMobilePopup] = useState<{ hlId: string; x: number; y: number } | null>(null);
   const [drafts, setDrafts] = useState<Record<string, string>>({});
   const [positions, setPositions] = useState<Record<string, number>>({});
   const pendingRef = useRef<{ text: string; entryId: number; startOffset: number } | null>(null);
@@ -104,7 +105,17 @@ export default function HighlightLayer() {
             span.style.borderRadius = '2px';
             span.style.padding = '0 1px';
             span.style.cursor = 'pointer';
+            span.style.position = 'relative';
             r.surroundContents(span);
+
+            // Add comment count badge for mobile (hidden on lg+)
+            if (h.comments.length > 0) {
+              const badge = document.createElement('span');
+              badge.className = 'hl-badge lg:!hidden';
+              badge.textContent = `${h.comments.length}`;
+              badge.dataset.hlId = h.id;
+              span.appendChild(badge);
+            }
 
             const rect = span.getBoundingClientRect();
             const container = document.querySelector('[data-metalog-container]');
@@ -198,13 +209,23 @@ export default function HighlightLayer() {
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.dataset.hlId) {
-        setActiveId(target.dataset.hlId);
+      const hlEl = target.closest('[data-hl-id]') as HTMLElement | null;
+      if (hlEl && hlEl.dataset.hlId) {
+        const id = hlEl.dataset.hlId;
+        // On mobile (< 1024px), show popup
+        if (window.innerWidth < 1024) {
+          const rect = hlEl.getBoundingClientRect();
+          setMobilePopup({ hlId: id, x: rect.left + rect.width / 2, y: rect.bottom + 8 });
+        } else {
+          setActiveId(id);
+        }
+      } else if (mobilePopup) {
+        setMobilePopup(null);
       }
     };
     document.addEventListener('click', onClick, true);
     return () => document.removeEventListener('click', onClick, true);
-  }, []);
+  }, [mobilePopup]);
 
   function doHighlight(colorIdx: number) {
     const p = pendingRef.current;
@@ -249,7 +270,7 @@ export default function HighlightLayer() {
     <>
       {toolbar && (
         <div
-          className="hl-toolbar fixed z-50 flex gap-1.5 bg-[#111] border border-gray-700 rounded px-2 py-1.5"
+          className="hl-toolbar fixed z-50 hidden lg:flex gap-1.5 bg-[#111] border border-gray-700 rounded px-2 py-1.5"
           style={{ left: toolbar.x, top: toolbar.y, transform: 'translate(-50%, -100%)' }}
         >
           {COLORS.map((c, i) => (
@@ -263,7 +284,28 @@ export default function HighlightLayer() {
         </div>
       )}
 
-      <aside className="w-56 shrink-0 relative" data-sidebar>
+      {/* Mobile popup */}
+      {mobilePopup && (() => {
+        const h = allHighlights.find((hl) => hl.id === mobilePopup.hlId);
+        if (!h || h.comments.length === 0) return null;
+        return (
+          <div
+            className="fixed z-50 lg:hidden bg-[#111] border border-gray-700 rounded px-3 py-2 max-w-[260px]"
+            style={{ left: mobilePopup.x, top: mobilePopup.y, transform: 'translateX(-50%)' }}
+          >
+            <div className="text-[9px] text-gray-600 truncate mb-1">
+              &ldquo;{h.text.slice(0, 40)}{h.text.length > 40 ? '...' : ''}&rdquo;
+            </div>
+            {h.comments.map((c) => (
+              <div key={c.id} className="text-[10px] text-gray-400 leading-[1.5] mt-1">
+                {c.text}
+              </div>
+            ))}
+          </div>
+        );
+      })()}
+
+      <aside className="w-56 shrink-0 relative hidden lg:block" data-sidebar>
         {sorted.map((h) => {
           const top = positions[h.id];
           if (top === undefined) return null;

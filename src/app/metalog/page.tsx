@@ -60,7 +60,7 @@ export default function MetalogPage() {
       </header>
 
       <div className="flex gap-6 flex-1 relative" data-metalog-container>
-        <main className="flex-1 py-8 space-y-0 min-w-0">
+        <main className="flex-1 py-8 space-y-0 min-w-0 overflow-x-hidden">
           {entries.map((entry) => {
             const s = AUTHOR_STYLES[entry.author] || AUTHOR_STYLES.kerem;
             const thread = getThread(entry.id);
