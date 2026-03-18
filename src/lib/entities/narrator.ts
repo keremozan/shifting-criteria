@@ -1,4 +1,5 @@
 import { SystemState, EntityState, Fragment } from '../types';
+import { fmtRun } from '../taxonomy';
 
 function countByPredicate(frags: Fragment[], pred: (f: Fragment) => boolean): number {
   return frags.filter(pred).length;
@@ -10,17 +11,17 @@ function writerSentence(state: SystemState): string | null {
   );
   if (newFrags.length === 0) return null;
   const contents = newFrags.map((f) => `"${f.content}"`);
-  if (newFrags.length === 1) return `Writer produced ${contents[0]}.`;
-  return `Writer produced ${newFrags.length} fragments: ${contents.join(', ')}.`;
+  if (newFrags.length === 1) return `Writer sourced ${contents[0]}.`;
+  return `Writer sourced ${newFrags.length} fragments: ${contents.join(', ')}.`;
 }
 
 function checkerSentence(state: SystemState): string | null {
-  const living = state.document.filter((f) => f.alive);
+  const active = state.document.filter((f) => f.alive);
   const flagged: string[] = [];
   const highlighted: string[] = [];
   const tagged: string[] = [];
 
-  for (const frag of living) {
+  for (const frag of active) {
     const thisCheckerMarks = frag.marks.filter(
       (m) => m.entity === 'checker' && frag.operations.some((op) => op.entity === 'checker' && op.cycle === state.cycle)
     );
@@ -38,7 +39,7 @@ function checkerSentence(state: SystemState): string | null {
   if (tagged.length > 0) parts.push(`tagged ${tagged.length} with adjectives`);
 
   if (parts.length === 0) {
-    const checked = living.filter((f) =>
+    const checked = active.filter((f) =>
       f.operations.some((op) => op.entity === 'checker' && op.cycle === state.cycle)
     ).length;
     if (checked > 0) return `Checker evaluated ${checked} fragments. All passed.`;
@@ -48,11 +49,11 @@ function checkerSentence(state: SystemState): string | null {
 }
 
 function cutterSentence(state: SystemState): string | null {
-  const killed = state.document.filter(
+  const removed = state.document.filter(
     (f) => !f.alive && f.operations.some((op) => op.entity === 'cutter' && op.type === 'remove' && op.cycle === state.cycle)
   );
-  if (killed.length === 0) return 'Cutter found nothing to remove.';
-  const reasons = killed.map((f) => {
+  if (removed.length === 0) return 'Cutter found nothing to remove.';
+  const reasons = removed.map((f) => {
     const op = f.operations.find((o) => o.entity === 'cutter' && o.type === 'remove' && o.cycle === state.cycle);
     const match = op?.detail.match(/REASON\((\w+)\)/);
     const reason = match?.[1] || 'unknown';
@@ -62,7 +63,7 @@ function cutterSentence(state: SystemState): string | null {
     if (reason === 'kill_long') return `"${short}..." (too long)`;
     return `"${short}..." (${reason})`;
   });
-  return `Cutter killed ${killed.length}: ${reasons.join(', ')}.`;
+  return `Cutter removed ${removed.length}: ${reasons.join(', ')}.`;
 }
 
 function readerSentence(state: SystemState): string | null {
@@ -96,9 +97,9 @@ function criteriaSentence(state: SystemState): string | null {
 }
 
 function populationSentence(state: SystemState): string {
-  const alive = countByPredicate(state.document, (f) => f.alive);
-  const dead = countByPredicate(state.document, (f) => !f.alive);
-  return `Document holds ${alive} living fragment${alive !== 1 ? 's' : ''}, ${dead} dead.`;
+  const active = countByPredicate(state.document, (f) => f.alive);
+  const removed = countByPredicate(state.document, (f) => !f.alive);
+  return `Document holds ${active} active fragment${active !== 1 ? 's' : ''}, ${removed} removed.`;
 }
 
 export function buildNarrative(state: SystemState): string[] {
@@ -150,7 +151,7 @@ export function runNarrator(state: SystemState): SystemState {
         cycle,
         timestamp: now,
         entity: 'narrator',
-        action: `narrated cycle ${cycle}`,
+        action: `narrated ${fmtRun(cycle, 'narrative')}`,
       },
     ],
   };
