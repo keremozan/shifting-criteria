@@ -14,6 +14,7 @@ export const TAG_COLORS: Record<ChangeTag, string> = {
   ui: '#3b82f6',
   page: '#22c55e',
   system: '#f59e0b',
+  fix: '#f87171',
 };
 
 export const changelog: ChangelogEntry[] = [
