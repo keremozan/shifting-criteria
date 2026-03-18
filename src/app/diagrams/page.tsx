@@ -22,7 +22,7 @@ export default function DiagramsPage() {
         {diagrams.length === 0 && (
           <div className="text-[10px] text-gray-600">no diagrams yet.</div>
         )}
-        {diagrams.map((d: any) => {
+        {[...diagrams].reverse().map((d: any) => {
           const isSuperseded = !!d.supersededBy;
 
           return (

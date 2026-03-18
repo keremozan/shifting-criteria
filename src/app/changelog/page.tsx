@@ -14,7 +14,9 @@ function groupByDate(entries: typeof changelog) {
     if (!groups[entry.date]) groups[entry.date] = [];
     groups[entry.date].push(entry);
   }
-  return Object.entries(groups).sort(([a], [b]) => b.localeCompare(a));
+  return Object.entries(groups)
+    .sort(([a], [b]) => b.localeCompare(a))
+    .map(([date, entries]) => [date, [...entries].reverse()] as const);
 }
 
 export default function ChangelogPage() {
