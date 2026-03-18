@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { Fragment, Mark, Operation } from '@/lib/types';
 import { editorRevise, EDITOR_ACTIVE_FROM_CYCLE } from '@/lib/editor';
+import { fmtRun } from '@/lib/taxonomy';
 
 const ENTITY_COLORS: Record<string, string> = {
   writer: '#9ca3af',
@@ -110,7 +111,7 @@ export default function FragmentView({ fragment, currentCycle }: { fragment: Fra
       onClick={() => setExpanded(!expanded)}
     >
       <div className="flex items-baseline gap-2">
-        <span className="text-gray-600 text-[10px] shrink-0 select-none">c{fragment.cycle}</span>
+        <span className="text-gray-600 text-[10px] shrink-0 select-none">{fmtRun(fragment.cycle, 'fragment')}</span>
         {style.label && (
           <span className="text-[8px] uppercase tracking-wider shrink-0 px-1 py-px rounded"
             style={{ color: style.border, backgroundColor: `${style.border}15`, border: `1px solid ${style.border}30` }}
@@ -139,7 +140,7 @@ export default function FragmentView({ fragment, currentCycle }: { fragment: Fra
         <div className="ml-8 mt-2 pt-2 border-t border-gray-800 space-y-0.5">
           {fragment.operations.slice().sort((a, b) => a.timestamp - b.timestamp).map((op) => (
             <div key={op.id} className="text-[10px] leading-tight flex gap-2">
-              <span className="text-gray-600 shrink-0">c{op.cycle}</span>
+              <span className="text-gray-600 shrink-0">{fmtRun(op.cycle, 'fragment')}</span>
               <span style={{ color: ENTITY_COLORS[op.entity] || '#6b7280' }}>{describeOperation(op)}</span>
             </div>
           ))}

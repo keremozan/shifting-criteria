@@ -147,5 +147,17 @@
       "inherited assumptions",
       "Editor"
     ]
+  },
+  {
+    "id": 14,
+    "startEntry": 44,
+    "endEntry": 49,
+    "summary": "naming convention / taxonomist agent",
+    "subtext": "\"cycle 8\" sounds like a title. too many numbers. proposing a taxonomist agent to own the naming layer. Editor handles tone, taxonomist handles structure.",
+    "tags": [
+      "language",
+      "convention",
+      "taxonomist"
+    ]
   }
 ]

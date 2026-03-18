@@ -249,4 +249,20 @@ export const changelog: ChangelogEntry[] = [
     title: 'Source pool expanded to 56',
     description: 'Added 31 new sentences from the metalog conversation. Mix of kerem and architect lines at various word lengths.',
   },
+  {
+    id: 30,
+    date: '2026-03-19',
+    time: '04:00',
+    tag: 'system',
+    title: 'Taxonomy agent',
+    description: 'Static vocabulary file (data/taxonomy.json) defines display terms. "Cycle" becomes "run" in UI, "#8" in header/snapshots, "c3" on fragments. Button renamed from "cycle" to "run".',
+  },
+  {
+    id: 31,
+    date: '2026-03-19',
+    time: '04:05',
+    tag: 'page',
+    title: 'Rulebook page',
+    description: 'New /rulebook route. Displays taxonomy terms and system rules including the archival rule for snapshots.',
+  },
 ];

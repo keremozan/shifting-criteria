@@ -9,6 +9,7 @@ import DocumentView from '@/components/DocumentView';
 import EntityPanel from '@/components/EntityPanel';
 import SystemLog from '@/components/SystemLog';
 import { editorRevise } from '@/lib/editor';
+import { fmtRun } from '@/lib/taxonomy';
 
 const ENTITY_ORDER: EntityId[] = ['writer', 'checker', 'cutter', 'reader', 'narrator', 'logger'];
 
@@ -62,7 +63,7 @@ export default function Home() {
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-[10px] text-gray-500">
-              cycle {state.cycle}
+              {fmtRun(state.cycle)}
             </span>
             <button
               onClick={handleReset}
@@ -74,7 +75,7 @@ export default function Home() {
               onClick={handleCycle}
               className="text-[10px] text-gray-400 border border-gray-700 px-2 py-0.5 rounded hover:bg-gray-900 hover:text-gray-300 transition-colors cursor-pointer"
             >
-              &#9654; cycle
+              &#9654; run
             </button>
           </div>
         </div>
@@ -86,6 +87,7 @@ export default function Home() {
           <span className="text-gray-600">meta</span>
           <Link href="/metalog" className="text-gray-500 hover:text-gray-300 transition-colors">metalog</Link>
           <Link href="/diagrams" className="text-gray-500 hover:text-gray-300 transition-colors">diagrams</Link>
+          <Link href="/rulebook" className="text-gray-500 hover:text-gray-300 transition-colors">rulebook</Link>
           <span className="text-gray-700">|</span>
           <Link href="/about" className="text-gray-500 hover:text-gray-300 transition-colors">about</Link>
         </nav>
@@ -95,7 +97,7 @@ export default function Home() {
       {state.narrative && state.narrative.length > 0 && (
         <div className="py-3 border-b border-gray-800">
           <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-1.5">
-            cycle {state.cycle}
+            {fmtRun(state.cycle, 'narrative')}
           </div>
           <div className="space-y-0.5">
             {state.narrative.map((line, i) => (

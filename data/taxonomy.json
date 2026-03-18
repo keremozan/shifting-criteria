@@ -1,0 +1,45 @@
+{
+  "run": {
+    "definition": "one execution of the engine, writer through logger",
+    "display": {
+      "header": "#",
+      "narrative": "run",
+      "snapshot": "#",
+      "fragment": "c"
+    }
+  },
+  "runCount": {
+    "definition": "how many times the engine has executed",
+    "example": "#12"
+  },
+  "origin": {
+    "definition": "the run during which a fragment was born",
+    "example": "c3"
+  },
+  "fragment": {
+    "definition": "a sourced sentence living in the document"
+  },
+  "active": {
+    "definition": "fragment that has not been removed",
+    "replaces": "alive"
+  },
+  "removed": {
+    "definition": "fragment that the cutter eliminated",
+    "replaces": "dead"
+  },
+  "flagged": {
+    "definition": "fragment marked by the checker against a criterion"
+  },
+  "surviving": {
+    "definition": "fragment that has been flagged but persists beyond one run"
+  },
+  "sourced": {
+    "definition": "pulled from the source pool into the document by the writer"
+  },
+  "criteria": {
+    "definition": "the three formal rules fragments are evaluated against"
+  },
+  "shift": {
+    "definition": "a random change to one criterion threshold, occurs every 5 runs"
+  }
+}

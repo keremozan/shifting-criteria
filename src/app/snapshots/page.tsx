@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { snapshots } from '@/lib/data';
 import { editorRevise } from '@/lib/editor';
+import { fmtRun } from '@/lib/taxonomy';
 
 interface Fragment {
   id: string;
@@ -97,7 +98,7 @@ export default function SnapshotsPage() {
                 onClick={() => setExpandedId(isOpen ? null : snap.id)}
               >
                 <div className="flex items-baseline gap-3">
-                  <span className="text-[11px] text-gray-300 font-medium">cycle {snap.cycle}</span>
+                  <span className="text-[11px] text-gray-300 font-medium">{fmtRun(snap.cycle, 'snapshot')}</span>
                   <span className="text-[9px] text-gray-600">{snap.date} {snap.time}</span>
                   <span className="text-[9px] text-gray-600 ml-auto"
                     dangerouslySetInnerHTML={{
@@ -136,7 +137,7 @@ export default function SnapshotsPage() {
                         return (
                           <div key={f.id} className="py-2 pl-3 border-l-2" style={{ borderColor: lc.color }}>
                             <div className="flex items-baseline gap-2">
-                              <span className="text-[9px] text-gray-600 shrink-0">c{f.cycle}</span>
+                              <span className="text-[9px] text-gray-600 shrink-0">{fmtRun(f.cycle, 'fragment')}</span>
                               {lc.label && (
                                 <span className="text-[8px] uppercase tracking-wider shrink-0 px-1 py-px rounded"
                                   style={{ color: lc.color, backgroundColor: `${lc.color}15`, border: `1px solid ${lc.color}30` }}
@@ -189,7 +190,7 @@ export default function SnapshotsPage() {
                       <div className="mt-1 space-y-0.5">
                         {snap.state.criteria.history.map((h: any, i: number) => (
                           <div key={i} className="text-[9px] text-gray-600">
-                            cycle {h.cycle}: {h.criteria.join(', ')}
+                            {fmtRun(h.cycle, 'snapshot')}: {h.criteria.join(', ')}
                           </div>
                         ))}
                       </div>

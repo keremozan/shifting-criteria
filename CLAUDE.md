@@ -51,6 +51,9 @@ Next.js, TypeScript, Tailwind. Runs on port 3456 (`npm run dev`).
 
 Changelog sits outside this stack.
 
+### Archival rule
+Saved snapshots preserve the exact state and language of their moment. New rules, taxonomy changes, and editor revisions do not retroactively alter them.
+
 ## Convention: ASIDE
 
 When kerem says **ASIDE**, everything that follows is metalog territory. No matter what the content is.

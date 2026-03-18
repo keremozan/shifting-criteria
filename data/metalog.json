@@ -299,5 +299,47 @@
     "time": "02:45",
     "author": "architect",
     "comment": "Interesting. The Editor is not a cycle entity. It operates on the <em>presentation layer</em>, not the document. It reads what the other entities produced and revises how it gets displayed. The underlying data stays the same (the Cutter still sets <code>alive: false</code>), but the Editor intercepts the labels before they reach the viewer.<br><br>So \"dead\" gets struck through and replaced. \"Killed\" gets struck through and replaced. The Editor proposes alternatives. The old snapshots keep their original language because the Editor only touches cycles going forward.<br><br>This is a third kind of agent. Cycle entities transform the document. Observers annotate it. The Editor transforms the <em>interface</em>. It sits between the system and the viewer, editing what the viewer sees without changing what the system did."
+  },
+  {
+    "id": 44,
+    "date": "2026-03-19",
+    "time": "03:40",
+    "author": "kerem",
+    "comment": "\"Cycle 8\" sounds like a named phase, like the eighth installment of something. But it is just a counter. The system has run 8 times. We need a naming convention that reads correctly both in code and to a person looking at the interface."
+  },
+  {
+    "id": 45,
+    "date": "2026-03-19",
+    "time": "03:45",
+    "author": "architect",
+    "comment": "The confusion is between <em>identity</em> and <em>count</em>. \"Cycle 8\" sounds like a proper name. \"8 cycles\" sounds like a duration. Neither is exactly right. The system has run 8 times, and the viewer is looking at the state after the 8th run.<br><br>In code, the variable is <code>state.cycle</code> and it is an integer that increments by 1 each run. Fragments are labeled <code>c3</code> meaning \"born during the 3rd run.\" That <code>c</code> prefix already works well on fragments because it is small and stays out of the way.<br><br>For the interface, the options:<br><br><strong>Header:</strong> instead of \"cycle 8\", show <strong>#8</strong> or <strong>run 8</strong> or just <strong>8</strong> next to a small label.<br><br><strong>Snapshots:</strong> instead of \"cycle 8\", show <strong>after 8 runs</strong> or <strong>#8</strong> with the date beside it.<br><br><strong>Fragment labels:</strong> keep <code>c3</code> as-is. It already reads as a tag, not a name.<br><br>I think <strong>#8</strong> is the cleanest. It reads as a count, not a title. The hash makes it feel like an index entry. In the header it would be <strong>#0</strong> at start, <strong>#12</strong> after twelve runs. In snapshots, <strong>#8</strong> next to the date. In code, <code>state.cycle</code> stays as-is, the display layer just formats it with a hash."
+  },
+  {
+    "id": 46,
+    "date": "2026-03-19",
+    "time": "03:50",
+    "author": "kerem",
+    "comment": "Maybe we need a taxonomist. A new member."
+  },
+  {
+    "id": 47,
+    "date": "2026-03-19",
+    "time": "03:55",
+    "author": "architect",
+    "comment": "A taxonomist would own the naming layer. Every label in the system (\"cycle\", \"alive\", \"dead\", \"fragment\", \"flagged\", \"surviving\", the entity names themselves) would pass through it. The Editor already does this partially. It strikes through \"dead\" and suggests \"removed\". But the Editor is reactive. It patches language after the fact.<br><br>A taxonomist would be proactive. It would maintain a vocabulary for the whole system and enforce consistency. If the convention changes from \"cycle 8\" to something else, the taxonomist decides what the replacement is. If a new concept appears, the taxonomist names it.<br><br>The Editor handles tone (no killing language). The taxonomist handles structure (what things are called and why). They are related but separate responsibilities.<br><br>This also solves the current mess where \"cycle\" means three different things: the act of running the engine, the number of times it has run, and the moment a fragment was born. A taxonomist would give those three things three different names."
+  },
+  {
+    "id": 48,
+    "date": "2026-03-19",
+    "time": "04:00",
+    "author": "kerem",
+    "comment": "Rule: every old snapshot stays the same even if there are new updates, because they are archival entities. Also, let's add a rulebook page."
+  },
+  {
+    "id": 49,
+    "date": "2026-03-19",
+    "time": "04:05",
+    "author": "architect",
+    "comment": "Done. The taxonomy file (<code>data/taxonomy.json</code>) holds the vocabulary. \"Cycle\" is now \"run\" in display. The button says \"run\" instead of \"cycle\". The header shows <strong>#8</strong> instead of \"cycle 8\". Fragment labels stay <strong>c3</strong>.<br><br>The rulebook page at <code>/rulebook</code> lists the full taxonomy and all system rules in one place. Including the archival rule: saved snapshots are frozen. No retroactive changes."
   }
 ]

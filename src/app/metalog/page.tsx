@@ -59,6 +59,22 @@ export default function MetalogPage() {
         </Link>
       </header>
 
+      {/* Thread index */}
+      <div className="py-4 border-b border-gray-800">
+        <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-2">index</div>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          {threads.map((t) => (
+            <a
+              key={t.id}
+              href={`#thread-${t.id}`}
+              className="text-[10px] text-gray-500 hover:text-gray-300 transition-colors"
+            >
+              {t.summary}
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div className="flex gap-6 flex-1 relative" data-metalog-container>
         <main className="flex-1 py-8 space-y-0 min-w-0 overflow-x-hidden">
           {entries.map((entry) => {
@@ -70,7 +86,7 @@ export default function MetalogPage() {
             return (
               <div key={entry.id}>
                 {isStart && thread && (
-                  <div className="pt-6 pb-2">
+                  <div className="pt-6 pb-2" id={`thread-${thread.id}`}>
                     <div className="flex items-center gap-2">
                       <div className="text-[11px] text-gray-400">{thread.summary}</div>
                       <div className="flex gap-1.5">
