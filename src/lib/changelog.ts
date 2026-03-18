@@ -289,4 +289,20 @@ export const changelog: ChangelogEntry[] = [
     title: 'Editor revisions on fragment marks',
     description: 'MarkBadge component now passes through the Editor for gen 4+. Cutter marks say "removed:" instead of "killed:". Narrator uses taxonomy terms.',
   },
+  {
+    id: 35,
+    date: '2026-03-19',
+    time: '05:00',
+    tag: 'page',
+    title: 'Poet page',
+    description: 'New /poet route. Reads the metalog, extracts candidate sentences, shows which are in the source pool and which are not. Filter by author, sort by word count. Locally, click + to add a sentence to the pool.',
+  },
+  {
+    id: 36,
+    date: '2026-03-19',
+    time: '05:00',
+    tag: 'ui',
+    title: 'Mobile sticky run button',
+    description: 'Fixed bottom bar on mobile with prominent run button + reset. Desktop controls hidden on small screens. Nav flattened.',
+  },
 ];

@@ -45,7 +45,7 @@ export default function AboutPage() {
         </p>
 
         <div className="border-t border-gray-800 pt-4 text-[10px] text-gray-600">
-          Kerem Ozanbayraktar, 2026. Built with Claude.
+          Kerem Ozan Bayraktar, 2026. Built with Claude.
         </div>
       </main>
     </div>

@@ -183,6 +183,7 @@ export default function Home() {
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               {[
                 { name: 'architect', color: '#60a5fa' },
+                { name: 'poet', color: '#f9a8d4' },
                 { name: 'threads', color: '#f472b6' },
                 { name: 'editor', color: '#34d399' },
                 { name: 'taxonomist', color: '#fb923c' },

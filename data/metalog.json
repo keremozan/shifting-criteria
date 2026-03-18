@@ -355,5 +355,19 @@
     "time": "04:45",
     "author": "architect",
     "comment": "The source pool right now is accidental. I pulled sentences from the metalog that sounded good in isolation. No principle behind the selection. Some are questions, some are statements, some are fragments of argument. The lengths vary randomly. The word overlap between them is uncontrolled.<br><br>A poet would curate with intention. Not writing new material, but selecting from what exists with an ear for how sentences sound next to each other, how word repetitions create echoes the Checker will catch, how sentence length determines what survives and what gets removed.<br><br>The poet would also think about what is <em>missing</em>. Right now the pool is heavy on meta-commentary (\"too abstract\", \"what is at stake\"). There are no images, no concrete nouns, no sensory language. A poet might pull in lines that break the self-referential tone.<br><br>The poet is a new observer. It does not run in the generation pipeline. It operates on the source pool between sessions, reshaping what the Writer has to work with."
+  },
+  {
+    "id": 52,
+    "date": "2026-03-19",
+    "time": "04:55",
+    "author": "kerem",
+    "comment": "The poet should only select, no new creation. Well, selecting is creation anyway."
+  },
+  {
+    "id": 53,
+    "date": "2026-03-19",
+    "time": "05:00",
+    "author": "architect",
+    "comment": "That is the whole point. The poet does not write. The poet reads the metalog and picks. Every sentence in the source pool already exists somewhere in the conversation. The poet decides which ones enter the pool and which ones stay in the metalog where they were said.<br><br>And you are right that selecting is creation. The metalog has hundreds of sentences. The source pool has 56. The gap between those two numbers is the poet's work. What gets left out shapes the document as much as what gets included. A sentence that never enters the pool can never be flagged, can never be removed, can never survive. The poet decides what is even eligible for the system's judgment.<br><br>That makes the poet the most powerful agent in the system. The generation entities can only act on what the poet has already chosen."
   }
 ]
