@@ -159,5 +159,17 @@
       "convention",
       "taxonomist"
     ]
+  },
+  {
+    "id": 15,
+    "startEntry": 50,
+    "endEntry": 51,
+    "summary": "poet agent for source curation",
+    "subtext": "the source pool was selected without principle. a poet would curate with intention, thinking about sound, overlap, length, and what is missing.",
+    "tags": [
+      "fragments",
+      "convention",
+      "poet"
+    ]
   }
 ]

@@ -341,5 +341,19 @@
     "time": "04:05",
     "author": "architect",
     "comment": "Done. The taxonomy file (<code>data/taxonomy.json</code>) holds the vocabulary. \"Cycle\" is now \"run\" in display. The button says \"run\" instead of \"cycle\". The header shows <strong>#8</strong> instead of \"cycle 8\". Fragment labels stay <strong>c3</strong>.<br><br>The rulebook page at <code>/rulebook</code> lists the full taxonomy and all system rules in one place. Including the archival rule: saved snapshots are frozen. No retroactive changes."
+  },
+  {
+    "id": 50,
+    "date": "2026-03-19",
+    "time": "04:40",
+    "author": "kerem",
+    "comment": "We need someone to select the wordlist. I think we need a poet. What do you think?"
+  },
+  {
+    "id": 51,
+    "date": "2026-03-19",
+    "time": "04:45",
+    "author": "architect",
+    "comment": "The source pool right now is accidental. I pulled sentences from the metalog that sounded good in isolation. No principle behind the selection. Some are questions, some are statements, some are fragments of argument. The lengths vary randomly. The word overlap between them is uncontrolled.<br><br>A poet would curate with intention. Not writing new material, but selecting from what exists with an ear for how sentences sound next to each other, how word repetitions create echoes the Checker will catch, how sentence length determines what survives and what gets removed.<br><br>The poet would also think about what is <em>missing</em>. Right now the pool is heavy on meta-commentary (\"too abstract\", \"what is at stake\"). There are no images, no concrete nouns, no sensory language. A poet might pull in lines that break the self-referential tone.<br><br>The poet is a new observer. It does not run in the generation pipeline. It operates on the source pool between sessions, reshaping what the Writer has to work with."
   }
 ]

@@ -67,11 +67,11 @@ export default function Home() {
             <h1 className="text-[11px] text-gray-500 tracking-[0.15em] uppercase">
               ETSC
             </h1>
-          </div>
-          <div className="flex items-baseline gap-2">
             <span className="text-[10px] text-gray-500">
               {fmtGen(state.cycle, aliveCount, deadCount)}
             </span>
+          </div>
+          <div className="hidden sm:flex items-baseline gap-2">
             <button
               onClick={handleSnapshot}
               className="text-[10px] text-gray-600 hover:text-gray-400 transition-colors cursor-pointer"
@@ -93,16 +93,12 @@ export default function Home() {
           </div>
         </div>
         <nav className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-[10px]">
-          <span className="text-gray-600">system</span>
-          <Link href="/snapshots" className="text-gray-500 hover:text-gray-300 transition-colors">snapshots</Link>
-          <Link href="/changelog" className="text-gray-500 hover:text-gray-300 transition-colors">changelog</Link>
-          <span className="text-gray-700">|</span>
-          <span className="text-gray-600">meta</span>
-          <Link href="/metalog" className="text-gray-500 hover:text-gray-300 transition-colors">metalog</Link>
-          <Link href="/diagrams" className="text-gray-500 hover:text-gray-300 transition-colors">diagrams</Link>
-          <Link href="/rulebook" className="text-gray-500 hover:text-gray-300 transition-colors">rulebook</Link>
-          <span className="text-gray-700">|</span>
           <Link href="/about" className="text-gray-500 hover:text-gray-300 transition-colors">about</Link>
+          <Link href="/metalog" className="text-gray-500 hover:text-gray-300 transition-colors">metalog</Link>
+          <Link href="/rulebook" className="text-gray-500 hover:text-gray-300 transition-colors">rulebook</Link>
+          <Link href="/diagrams" className="text-gray-500 hover:text-gray-300 transition-colors">diagrams</Link>
+          <Link href="/changelog" className="text-gray-500 hover:text-gray-300 transition-colors">changelog</Link>
+          <Link href="/snapshots" className="text-gray-500 hover:text-gray-300 transition-colors">snapshots</Link>
         </nav>
       </header>
 
@@ -203,12 +199,33 @@ export default function Home() {
       </section>
 
       {/* System log */}
-      <section className="border-t border-gray-800 py-3 mb-4">
+      <section className="border-t border-gray-800 py-3 mb-20 sm:mb-4">
         <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-2">
           log
         </div>
         <SystemLog entries={state.log} />
       </section>
+
+      {/* Mobile sticky bottom bar */}
+      <div className="fixed bottom-0 left-0 right-0 sm:hidden bg-[#0a0a0a] border-t border-gray-800 px-4 py-3 flex items-center justify-between z-40">
+        <span className="text-[10px] text-gray-500">
+          {fmtGen(state.cycle, aliveCount, deadCount)}
+        </span>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleReset}
+            className="text-[11px] text-gray-600 hover:text-gray-400 transition-colors cursor-pointer"
+          >
+            reset
+          </button>
+          <button
+            onClick={handleCycle}
+            className="text-[12px] text-gray-300 bg-gray-800 border border-gray-700 px-4 py-1.5 rounded hover:bg-gray-700 transition-colors cursor-pointer"
+          >
+            &#9654; run
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
