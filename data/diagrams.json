@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Entity Pipeline",
+    "date": "2026-03-18",
+    "time": "22:35",
+    "metalogEntryId": 2,
+    "type": "ascii",
+    "content": "                        CYCLE N\n                           |\n                     +-----+-----+\n                     |           |\n                  WRITER      CRITERIA\n                  sources     shifts every\n                  fragments   5 cycles\n                     |           |\n                     v           v\n                 +----------- CHECKER ----------+\n                 |   evaluates against criteria  |\n                 |                               |\n              flagged                        clean\n                 |                               |\n                 v                               |\n              CUTTER                             |\n              removes flagged,                   |\n              old, long                          |\n                 |                               |\n          +------+------+                        |\n          |             |                        |\n       removed     surviving                     |\n          |             |                        |\n          v             v                        v\n                    READER\n                    interprets patterns:\n                    survival, echo, density, void\n                           |\n                           v\n                       NARRATOR\n                       translates cycle\n                       into plain language\n                           |\n                           v\n                       LOGGER\n                       records stats"
+  },
+  {
+    "id": 2,
+    "title": "System Levels",
+    "date": "2026-03-19",
+    "time": "01:05",
+    "metalogEntryId": 27,
+    "type": "ascii",
+    "content": "  +--------------------------------------------------+\n  |  LEVEL 5: HIGHLIGHTS                             |\n  |  your marks on level 4. private.                 |\n  +--------------------------------------------------+\n  |  LEVEL 4: METALOG                                |\n  |  kerem + architect talking about levels 1-3.     |\n  |  uses ASIDE to enter.                            |\n  +--------------------------------------------------+\n  |  LEVEL 3: NARRATIVE                              |\n  |  what the Narrator says happened.                |\n  |  plain-language cycle recap.                     |\n  +--------------------------------------------------+\n  |  LEVEL 2: OPERATIONS                             |\n  |  marks, flags, cuts, annotations.                |\n  |  what the entities did.                          |\n  +--------------------------------------------------+\n  |  LEVEL 1: DOCUMENT                               |\n  |  the fragments. living and removed.              |\n  |  the raw material.                               |\n  +--------------------------------------------------+\n\n  - - - - - - - - - - - - - - - - - - - - - - - - - -\n  CHANGELOG sits outside this stack.\n  it records construction, not content.\n  - - - - - - - - - - - - - - - - - - - - - - - - - -"
+  }
+]

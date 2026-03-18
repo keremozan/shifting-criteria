@@ -1,0 +1,70 @@
+[
+  {
+    "id": "hl-1773857472818",
+    "text": "The system becomes a fortune cookie machine with a kill switch.",
+    "color": "#f87171",
+    "bg": "rgba(248, 113, 113, 0.35)",
+    "entryId": 21,
+    "startOffset": 580,
+    "endOffset": 643,
+    "comments": [
+      {
+        "id": "c-1773857476910",
+        "text": "lol",
+        "timestamp": 1773857476910
+      }
+    ]
+  },
+  {
+    "id": "hl-1773857517262",
+    "text": "Hofstadter, not art.",
+    "color": "#facc15",
+    "bg": "rgba(250, 204, 21, 0.4)",
+    "entryId": 21,
+    "startOffset": 749,
+    "endOffset": 769,
+    "comments": [
+      {
+        "id": "c-1773857719642",
+        "text": "be careful!",
+        "timestamp": 1773857719642
+      }
+    ]
+  },
+  {
+    "id": "hl-1773857709818",
+    "text": "The system becomes a fortune cookie machine with a kill switch.",
+    "color": "#f87171",
+    "bg": "rgba(248, 113, 113, 0.35)",
+    "entryId": 21,
+    "startOffset": 580,
+    "endOffset": 643,
+    "comments": []
+  },
+  {
+    "id": "hl-1773859399110",
+    "text": "This is a sixth level.",
+    "color": "#4ade80",
+    "bg": "rgba(74, 222, 128, 0.35)",
+    "entryId": 33,
+    "startOffset": 352,
+    "endOffset": 374,
+    "comments": [
+      {
+        "id": "c-1773859406504",
+        "text": "we should update the diagram later",
+        "timestamp": 1773859406504
+      }
+    ]
+  },
+  {
+    "id": "hl-1773860395966",
+    "text": "It was already in the codebase when I arrived.",
+    "color": "#60a5fa",
+    "bg": "rgba(96, 165, 250, 0.35)",
+    "entryId": 41,
+    "startOffset": 0,
+    "endOffset": 46,
+    "comments": []
+  }
+]

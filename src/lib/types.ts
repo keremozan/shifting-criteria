@@ -1,4 +1,4 @@
-export type EntityId = 'writer' | 'checker' | 'cutter' | 'logger' | 'reader';
+export type EntityId = 'writer' | 'checker' | 'cutter' | 'logger' | 'reader' | 'narrator';
 
 export type OperationType = 'add' | 'remove' | 'flag' | 'annotate' | 'rewrite' | 'value';
 
@@ -44,6 +44,7 @@ export interface SystemState {
   entities: Record<EntityId, EntityState>;
   criteria: Criteria;
   log: LogEntry[];
+  narrative: string[];
 }
 
 export interface Criteria {

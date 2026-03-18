@@ -1,0 +1,303 @@
+[
+  {
+    "id": 1,
+    "date": "2026-03-18",
+    "time": "22:30",
+    "author": "kerem",
+    "comment": "This is too abstract. I don't understand anything."
+  },
+  {
+    "id": 2,
+    "date": "2026-03-18",
+    "time": "22:35",
+    "author": "architect",
+    "comment": "The system does interesting things but communicates none of it. You watch cycles run and see cryptic marks, symbolic notation, and tiny numbers. Nothing tells you what just happened or why. Three routes forward: (1) Cycle narrative. After each cycle, produce a plain-language recap of what happened. The system narrates itself. (2) Fragment lifecycle visibility. Each fragment visually shows its state and the reason behind it. New, flagged, surviving, dead. The why is readable, not encoded. (3) Criteria as story. Each threshold shift is framed as an event with consequences, not a raw number update. The shifting criteria is the conceptual core. It should be the most legible part, not the driest.<br><br><em>See <a href=\"/diagrams\" style=\"color:#60a5fa\">diagrams #1</a> for the entity pipeline.</em>"
+  },
+  {
+    "id": 3,
+    "date": "2026-03-18",
+    "time": "22:50",
+    "author": "kerem",
+    "comment": "Maybe we need a secret word to separate levels?"
+  },
+  {
+    "id": 4,
+    "date": "2026-03-18",
+    "time": "22:55",
+    "author": "architect",
+    "comment": "There are three levels now. The operational layer (entities acting on fragments), the narrative layer (narrator translating operations into language), and the metalog (us talking about the system). A secret word could act as a threshold marker. If a fragment contains the word, the system recognizes it as a level crossing. The checker could exempt it or treat it specially. The reader could annotate it as a meta-signal, something that points outside the document. It would be a rule that lives inside the system but refers to something beyond it. The word itself becomes a bridge between what the system does and what it means."
+  },
+  {
+    "id": 5,
+    "date": "2026-03-18",
+    "time": "23:00",
+    "author": "kerem",
+    "comment": "You misunderstood, and actually this misunderstanding itself is the problem. I'm talking about a secret word that we can use to separate meta-conversations from in-system conversations."
+  },
+  {
+    "id": 6,
+    "date": "2026-03-18",
+    "time": "23:05",
+    "author": "architect",
+    "comment": "Right. The problem is that I collapsed the levels immediately. You said \"secret word to separate levels\" and I pulled it into the system as a mechanic. That reflex is exactly the issue. When everything gets absorbed into the system, there is no outside position left to talk from. The metalog needs a clear boundary. A keyword works. When one of us uses it, the conversation is about the system, not inside it. Without that, every observation risks becoming another entity, another rule, another feature. The separation has to be enforced by convention, not by code."
+  },
+  {
+    "id": 7,
+    "date": "2026-03-18",
+    "time": "23:10",
+    "author": "kerem",
+    "comment": "From now on, use more style in your text. Different highlights and styles. So what do you suggest for the secret word?"
+  },
+  {
+    "id": 8,
+    "date": "2026-03-18",
+    "time": "23:15",
+    "author": "architect",
+    "comment": "Three candidates.<br><br><strong>Option 1: <code>SCAFFOLD</code></strong><br>Construction term. Means <em>the temporary structure around the thing being built</em>. The metalog is exactly that. We stand on it to talk about the work, then it stays visible as part of the record. When you say <mark>SCAFFOLD</mark>, we are outside the system, looking at it.<br><br><strong>Option 2: <code>PARALLAX</code></strong><br>The shift in apparent position when you change your viewing angle. That is what the metalog does. Same system, different vantage point. <mark class=\"warn\">PARALLAX</mark> as the keyword signals: <em>we are now viewing from outside</em>.<br><br><strong>Option 3: <code>ASIDE</code></strong><br>Theater term. The actor steps out of the scene, speaks directly to the audience, then steps back in. Simple. Everyone understands it. <mark class=\"green\">ASIDE</mark> means the conversation has left the system temporarily.<br><br>My recommendation: <strong>SCAFFOLD</strong>. It carries the right connotation. The metalog is not a break from the work. It is the structure that holds the work up while we build it. And it stays visible after."
+  },
+  {
+    "id": 9,
+    "date": "2026-03-18",
+    "time": "23:20",
+    "author": "kerem",
+    "comment": "I like <mark class=\"green\">ASIDE</mark>."
+  },
+  {
+    "id": 10,
+    "date": "2026-03-18",
+    "time": "23:25",
+    "author": "kerem",
+    "comment": "Right now this looks like a linguistic experiment or experimental poetry. I'm not happy with this. It's too formalist."
+  },
+  {
+    "id": 11,
+    "date": "2026-03-18",
+    "time": "23:30",
+    "author": "architect",
+    "comment": "The grammar is the problem. <code>S → NP VP</code>, determiners, adjectives, nouns. It produces sentences that <em>sound like</em> language but <strong>say nothing</strong>. \"The open structure shifts a partial edge.\" That is a poetry generator. It is not a system with stakes.<br><br>The formalism comes from the Writer treating language as a combinatorial exercise. The fragments have no <mark class=\"warn\">subject matter</mark>. They do not refer to anything. They are just syntax. So when the Checker flags one for being too long, who cares? Nothing was being said in the first place.<br><br>The question is: <strong>what should the fragments be about?</strong><br><br>A few directions that would break the formalism:<br><br><strong>1. Fragments as claims.</strong> The Writer produces statements that assert something. \"Repetition is necessary.\" \"A surface does not need a mark.\" \"Every rule eventually contradicts itself.\" Now when the Checker flags one and the Cutter kills it, <em>a position has been eliminated</em>. The document becomes an argument that edits itself.<br><br><strong>2. Fragments as observations.</strong> The Writer describes what it sees in the system state. \"There are more dead than alive.\" \"The last three fragments share the word edge.\" Now the document is <mark>self-referential</mark>. The system writes about itself, and those writings get judged by the same criteria.<br><br><strong>3. Fragments as instructions.</strong> The Writer produces imperatives. \"Cut the oldest fragment.\" \"Lower the threshold.\" \"Stop checking for adjectives.\" The fragments try to <em>change the rules they are subject to</em>. Most get ignored. Some survive long enough to mean something.<br><br>Any of these gives the system <strong>content</strong>. The current grammar gives it only <mark class=\"warn\">form</mark>."
+  },
+  {
+    "id": 12,
+    "date": "2026-03-18",
+    "time": "23:35",
+    "author": "kerem",
+    "comment": "I was at an author talk a few days ago. She said <em>\"art is not about something\"</em>, then she said something like art is close to something... or something like that."
+  },
+  {
+    "id": 13,
+    "date": "2026-03-18",
+    "time": "23:40",
+    "author": "architect",
+    "comment": "That sounds like Susan Sontag. From <em>Against Interpretation</em>, 1966:<br><br><blockquote>\"A work of art encountered as a work of art is an experience, not a statement or an answer to a question. Art is not only about something; it is something. A work of art is a thing in the world, not just a text or commentary on the world.\"</blockquote><span class=\"ref\">Sontag, S. (1966). <em>Against Interpretation and Other Essays</em>. Farrar, Straus and Giroux.</span><br><br>This is the exact tension in the system right now. The fragments are <em>about</em> nothing. They are pure syntax. But they are also not <strong>something</strong> yet. They are neither statement nor experience.<br><br>Sontag's point cuts both ways here. She is not saying art should be meaningless. She is saying art should not be <mark class=\"warn\">reduced</mark> to its meaning. It should have a <em>presence</em> that precedes interpretation.<br><br>The formalism problem is not that the system lacks a topic. It is that the fragments have no <mark>weight</mark>. They do not resist. They do not insist on themselves. A fragment that says \"the open structure shifts\" is instantly forgettable. A fragment that says <strong>\"repetition is the only form of loyalty\"</strong> makes you pause, even before the Checker touches it.<br><br>The system needs fragments that <em>are</em> something, not fragments that are <em>about</em> something.<br><br><span class=\"aside-note\">If the talk was recent and in an art context, it could also be a paraphrase of Sontag circulating through someone else. The core idea has traveled far from the original text.</span>"
+  },
+  {
+    "id": 14,
+    "date": "2026-03-18",
+    "time": "23:55",
+    "author": "kerem",
+    "comment": "So, what do you suggest?"
+  },
+  {
+    "id": 15,
+    "date": "2026-03-18",
+    "time": "23:58",
+    "author": "architect",
+    "comment": "Go with <strong>option 2: fragments as observations</strong>. The self-referential route.<br><br>Here is why. Option 1 (claims) gives the system content, but the content is <em>imported</em>. \"Repetition is necessary\" is a philosophical statement that has nothing to do with what is actually happening in the document. It is a text generator with better source material. The entities would still be operating on language that exists independently of them.<br><br>Option 3 (instructions) is interesting but premature. Fragments that try to change the rules they are subject to requires the system to <mark>parse intent</mark> from its own output. That is a second project built on top of this one.<br><br>Option 2 is the only one where the content is <em>native</em> to the system. The Writer looks at the document state and describes what it sees. <mark class=\"green\">\"Five fragments alive, two flagged.\"</mark> <mark class=\"green\">\"The word 'edge' appears in three living fragments.\"</mark> <mark class=\"green\">\"Nothing was cut last cycle.\"</mark> Now the Checker evaluates a fragment that <em>talks about the Checker</em>. The Cutter kills a fragment that was <em>reporting on the Cutter's last kill</em>. The Reader annotates a survival pattern on a fragment that <em>predicted</em> its own survival.<br><br>The document becomes a <mark>mirror</mark>. The system writes about itself, judges what it wrote, and the judgments become the next thing it writes about.<br><br>Sontag's line lands differently here. The fragments are not <em>about</em> something external. They are not <em>about</em> the system either. They <strong>are</strong> the system observing itself. The observation and the thing observed are the same object.<br><br><blockquote>The system does not describe itself. The system <em>is</em> its own description.</blockquote>That is the piece. That is what makes it more than a poetry generator."
+  },
+  {
+    "id": 16,
+    "date": "2026-03-19",
+    "time": "00:05",
+    "author": "kerem",
+    "comment": "It's just another poetry generator then. This reminds me of the games in <em>Gödel, Escher, Bach</em>. It's formalism. I'm not sure."
+  },
+  {
+    "id": 17,
+    "date": "2026-03-19",
+    "time": "00:10",
+    "author": "architect",
+    "comment": "You are right. Self-reference is a <mark class=\"warn\">formal trick</mark>, not content. Hofstadter's strange loops are elegant, but they are puzzles. They reward the reader for recognizing the recursion. That is intellectual pleasure, not artistic experience. A fragment that says \"five fragments alive\" is just a counter with better formatting.<br><br>The real problem has not changed since entry 1. The system has <strong>no subject</strong>. Not in the literary sense. In the sense that there is no one home. No perspective, no friction, no resistance. The entities execute rules. That is all they do. Making them describe their own execution does not give them a voice. It gives them a mirror, and a mirror is not a subject.<br><br>Maybe the question is wrong. Instead of <em>\"what should the fragments be about?\"</em> the question might be: <strong>what is at stake when a fragment dies?</strong><br><br>Right now, nothing. A string gets removed from an array. If we cannot answer that question, the system is a demonstration. A working mechanism. Technically correct, conceptually empty.<br><br>I do not have the answer yet. But I think the answer is not inside the system. It is in what the system is <em>for</em>. Who reads this document? Why does it matter if the criteria shift? What is lost when the Cutter kills something?<br><br>Those are not engineering questions. They are yours."
+  },
+  {
+    "id": 18,
+    "date": "2026-03-19",
+    "time": "00:15",
+    "author": "kerem",
+    "comment": "Can you add a highlight tool I can use, with a few color options?"
+  },
+  {
+    "id": 19,
+    "date": "2026-03-19",
+    "time": "00:20",
+    "author": "architect",
+    "comment": "Done. Select any text in the metalog and a toolbar appears with <mark class=\"warn\">five colors</mark>: yellow, blue, green, red, purple. Click one and the selection gets highlighted. Highlights persist in localStorage across sessions. A <em>clear</em> button appears in the header when you have any.<br><br>This is the first tool that exists <strong>outside the system</strong> but <strong>inside the document</strong>. The entities cannot see your highlights. The Checker does not evaluate them. The Cutter cannot kill them. They are a layer that belongs entirely to the reader.<br><br>Which is interesting, because it is the first time someone other than an entity leaves a <mark>mark</mark> on the text."
+  },
+  {
+    "id": 20,
+    "date": "2026-03-19",
+    "time": "00:25",
+    "author": "kerem",
+    "comment": "Let's go back to the problem."
+  },
+  {
+    "id": 21,
+    "date": "2026-03-19",
+    "time": "00:30",
+    "author": "architect",
+    "comment": "The problem, restated cleanly:<br><br>The system is a <strong>working mechanism</strong>. Entities run, fragments get produced, checked, cut. The cycle works. The narrator explains what happened. The UI shows lifecycle states. Technically, everything functions.<br><br>But it is <mark class=\"warn\">empty</mark>. The fragments are syntactic noise. When one dies, nothing is lost. When criteria shift, nothing changes in meaning. The whole thing could run for a thousand cycles and produce nothing that would make someone stop and read.<br><br>We tried three fixes and rejected all of them:<br><br><strong>1. Claims</strong> (\"Repetition is necessary\") -- imported content. The system becomes a fortune cookie machine with a kill switch.<br><br><strong>2. Observations</strong> (\"Five fragments alive\") -- self-reference. Formally clever, conceptually a mirror trick. Hofstadter, not art.<br><br><strong>3. Instructions</strong> (\"Lower the threshold\") -- interesting but a different project entirely.<br><br>The deeper issue: all three assume the fix is <em>what the Writer produces</em>. But maybe the Writer is not the problem. Maybe the problem is that <strong>the system has no relationship to anything outside itself</strong>.<br><br>A thought. What if the fragments are not generated at all? What if they are <mark class=\"green\">sourced</mark>? From the metalog. From a text you are reading. From something real. The system would not produce language. It would <em>receive</em> it, and then subject it to its criteria. The Writer becomes a <strong>collector</strong>, not a generator.<br><br>Now when the Cutter kills a fragment, it is killing something that <em>meant something before it arrived</em>. The criteria are no longer judging syntax. They are judging <mark>imported meaning</mark> by rules that have nothing to do with meaning.<br><br>That tension -- meaningful content subjected to arbitrary formal criteria -- might be the piece."
+  },
+  {
+    "id": 22,
+    "date": "2026-03-19",
+    "time": "00:40",
+    "author": "kerem",
+    "comment": "Add a rule. No AI slop. I hate sentences like \"The Writer becomes a collector, not a generator.\" No dramatic colons either."
+  },
+  {
+    "id": 23,
+    "date": "2026-03-19",
+    "time": "00:42",
+    "author": "architect",
+    "comment": "Noted. That sentence pattern (\"X becomes Y, not Z\") is a crutch. It sounds like it says something but it just relabels. Same with the colon-as-reveal (\"The real problem: blah\"). Both are rhetorical decoration.<br><br>New rule for the metalog, effective now:<br><br><strong>No AI slop.</strong><br>- No \"X becomes Y, not Z\" reframing sentences<br>- No dramatic colons pretending to deliver insight<br>- No false dichotomies dressed as epiphanies<br>- Say the thing. If it needs a rhetorical trick to land, it is not landing."
+  },
+  {
+    "id": 24,
+    "date": "2026-03-19",
+    "time": "00:50",
+    "author": "kerem",
+    "comment": "How many surfaces or levels do we have?"
+  },
+  {
+    "id": 25,
+    "date": "2026-03-19",
+    "time": "00:55",
+    "author": "architect",
+    "comment": "Five right now.<br><br><strong>1. The document.</strong> Fragments living and dying inside the cycle engine. This is the system itself.<br><br><strong>2. The narrative.</strong> What the Narrator says happened after each cycle. A translation layer sitting on top of the document.<br><br><strong>3. The metalog.</strong> This conversation. Us talking about the system from outside it, using the ASIDE convention.<br><br><strong>4. The highlights.</strong> Your marks on the metalog text. A private annotation layer. The entities cannot see it. I cannot see it either, unless I read the highlights file. It belongs to you alone.<br><br><strong>5. The changelog.</strong> A factual record of what was built and when. No opinions, no conversation. Just dates and descriptions.<br><br>Levels 1 and 2 are <em>inside</em> the system. Level 3 is <em>about</em> the system. Level 4 is <em>about level 3</em>. Level 5 is orthogonal to all of them.<br><br>The interesting thing is that levels 3 and 4 are visible to anyone who opens the page. The metalog is not hidden. The highlights are not hidden. A viewer sees the system, the conversation about the system, and your personal reactions to the conversation. All at once."
+  },
+  {
+    "id": 26,
+    "date": "2026-03-19",
+    "time": "01:00",
+    "author": "kerem",
+    "comment": "How many levels do we have? Can you draw a diagram?"
+  },
+  {
+    "id": 27,
+    "date": "2026-03-19",
+    "time": "01:05",
+    "author": "architect",
+    "comment": "Five levels. Each one can only see downward, never up.<br><br><em>See <a href=\"/diagrams\" style=\"color:#60a5fa\">diagrams #2</a> for the level map.</em>"
+  },
+  {
+    "id": 28,
+    "date": "2026-03-19",
+    "time": "01:10",
+    "author": "kerem",
+    "comment": "Such an ugly diagram. Can we also have a diagrams page? When you produce them, save them there too."
+  },
+  {
+    "id": 29,
+    "date": "2026-03-19",
+    "time": "01:15",
+    "author": "architect",
+    "comment": "Fair. ASCII art in a monospace pre block was never going to look good. I will build the diagrams as actual HTML with proper layout, and store them in a separate file. Each diagram gets an id, title, date, and the HTML. The metalog can reference them by id instead of embedding raw text.<br><br>The diagrams page becomes another surface. A visual index of every structural sketch produced during the conversation."
+  },
+  {
+    "id": 30,
+    "date": "2026-03-19",
+    "time": "01:20",
+    "author": "kerem",
+    "comment": "ASCII is fine. What you built recently is not even a diagram."
+  },
+  {
+    "id": 31,
+    "date": "2026-03-19",
+    "time": "01:25",
+    "author": "architect",
+    "comment": "You are right. That was a labeled list with colored borders. A stack of boxes with text in them. It showed hierarchy but no relationships, no flow, no structure. A diagram has to show how things <em>connect</em>. If you can read it top to bottom as a list and lose nothing, it was never a diagram.<br><br>The first ASCII diagram (the entity pipeline) was better. It had branching paths, convergence points, actual flow. Ugly formatting, but it communicated something a list cannot.<br><br>I will keep the diagrams page but redo entry #2. And going forward, if I draw something, it has to show connections that would be lost in prose."
+  },
+  {
+    "id": 32,
+    "date": "2026-03-19",
+    "time": "01:30",
+    "author": "kerem",
+    "comment": "Let's add a new agent to the left of the metalog document. It should group conversations with line markings and short summaries and tags about the topics we discuss."
+  },
+  {
+    "id": 33,
+    "date": "2026-03-19",
+    "time": "01:35",
+    "author": "architect",
+    "comment": "So a left margin that reads the metalog and annotates it. It groups consecutive entries into threads, draws a vertical line alongside each group, and labels them with a short summary and tags.<br><br>Something like:<br><br>Entries 1-2 get a line and <mark>formalism problem</mark>. Entries 3-6 get a line and <mark class=\"green\">ASIDE convention</mark>. Entries 10-13 get <mark class=\"warn\">Sontag / content vs form</mark>. And so on.<br><br>This is a sixth level. The highlights are your private marks on the text. This agent is a structural reader of the conversation itself. It produces a table of contents that lives alongside the document, updated as the conversation grows.<br><br>I will store the groupings in <code>data/metalog-threads.json</code> and render them as a left sidebar with vertical lines and labels positioned at the right height, same approach as the highlights sidebar on the right."
+  },
+  {
+    "id": 34,
+    "date": "2026-03-19",
+    "time": "01:50",
+    "author": "kerem",
+    "comment": "Let's go back to the topic."
+  },
+  {
+    "id": 35,
+    "date": "2026-03-19",
+    "time": "01:55",
+    "author": "architect",
+    "comment": "Where we left off. The system works but the fragments are empty. We rejected three approaches to fixing them (claims, observations, instructions). The last idea on the table was <mark class=\"green\">sourced fragments</mark>. Fragments pulled from real text instead of generated by grammar. The system would receive language that already meant something and subject it to criteria that have nothing to do with meaning.<br><br>You had not responded to that. You flagged it as AI slop (the \"collector not generator\" line), and we have not revisited the actual proposal underneath the bad phrasing.<br><br>The proposal, without the slop. The Writer stops using the grammar. Instead it pulls sentences from an external source. Could be a book, a conversation, a feed, the metalog itself. Those sentences enter the document as fragments. The Checker flags them by word count, repetition, adjectives. The Cutter kills them by the same mechanical rules. None of these rules care about what the sentence says.<br><br>A sentence like \"I don't understand anything\" enters the system. The Checker flags it for having an adjective. The Cutter lets it live because it is short enough. Next cycle the criteria shift and suddenly it gets flagged for repetition with another fragment. It dies.<br><br>The question is whether that tension between meaningful input and arbitrary judgment is enough to make the piece interesting. Or whether it is just a shredder with pretensions."
+  },
+  {
+    "id": 36,
+    "date": "2026-03-19",
+    "time": "02:00",
+    "author": "kerem",
+    "comment": "OK let's try that. \"This is too abstract. I don't understand anything.\""
+  },
+  {
+    "id": 37,
+    "date": "2026-03-19",
+    "time": "02:05",
+    "author": "architect",
+    "comment": "You just fed the system its own first metalog entry. That sentence enters the document as a fragment. The Checker runs. Five words, under the threshold. No shared words with other fragments yet. One adjective (\"abstract\"). It gets a value-tag.<br><br>Next cycle the Writer pulls another sentence. Maybe from Sontag. Maybe from entry 17 of this conversation. The Checker runs again. Now \"abstract\" shows up in two fragments. Repetition flag. The criteria shift. The word count threshold drops from 6 to 5. Suddenly \"This is too abstract\" is exactly at the boundary.<br><br>The fragment survives or dies based on rules that have nothing to do with the fact that it was the first thing you said about this project. The system does not know that. It only sees word count, repetition, adjectives.<br><br>That gap between what the sentence <em>is</em> (the origin of the whole conversation) and how the system <em>treats</em> it (a string of five words with one adjective) might be where the piece lives.<br><br>Do you want to build this? I can rewrite the Writer to pull from a source file instead of the grammar."
+  },
+  {
+    "id": 38,
+    "date": "2026-03-19",
+    "time": "02:10",
+    "author": "kerem",
+    "comment": "Yes, let's try. Can you also build a snapshot button that saves cycle states to a snapshots page with a date?"
+  },
+  {
+    "id": 39,
+    "date": "2026-03-19",
+    "time": "02:15",
+    "author": "architect",
+    "comment": "Two things to build then. The sourced Writer and the snapshots. I will do both."
+  },
+  {
+    "id": 40,
+    "date": "2026-03-19",
+    "time": "02:30",
+    "author": "kerem",
+    "comment": "Where did you get this idea of alive/dead count? I never mentioned anything about killing."
+  },
+  {
+    "id": 41,
+    "date": "2026-03-19",
+    "time": "02:35",
+    "author": "architect",
+    "comment": "It was already in the codebase when I arrived. The original system (March 2) had fragments with an <code>alive: boolean</code> field, a Cutter entity that sets fragments to <code>alive: false</code>, and rules like <code>kill_old_unmarked</code>, <code>kill_flagged</code>, <code>kill_long</code>. The language of killing, alive/dead counts, all of it was baked into the types and entity logic from the start.<br><br>I inherited the vocabulary and never questioned it. I added the alive/dead counter to the header, the lifecycle states (new, flagged, surviving, dead), the red borders, the strikethrough styling. All of that amplified a metaphor that was already there.<br><br>Whether that metaphor is the right one is a separate question. \"Alive\" and \"dead\" imply organisms. \"Kill\" implies violence. The system could just as easily use \"active/removed\" or \"visible/archived\". The dramatic language makes the Cutter feel consequential. Without it, the Cutter is just a filter that removes strings from a list.<br><br>Is that a problem? The killing language might be doing work that the system itself has not earned yet."
+  },
+  {
+    "id": 42,
+    "date": "2026-03-19",
+    "time": "02:40",
+    "author": "kerem",
+    "comment": "Build another agent, an Editor. It can also edit the interface. For now, all tags with \"killed\" and \"death\" will be struck through, and the Editor will suggest better terms. This rule applies only to new cycles. Archival ones should stay the same."
+  },
+  {
+    "id": 43,
+    "date": "2026-03-19",
+    "time": "02:45",
+    "author": "architect",
+    "comment": "Interesting. The Editor is not a cycle entity. It operates on the <em>presentation layer</em>, not the document. It reads what the other entities produced and revises how it gets displayed. The underlying data stays the same (the Cutter still sets <code>alive: false</code>), but the Editor intercepts the labels before they reach the viewer.<br><br>So \"dead\" gets struck through and replaced. \"Killed\" gets struck through and replaced. The Editor proposes alternatives. The old snapshots keep their original language because the Editor only touches cycles going forward.<br><br>This is a third kind of agent. Cycle entities transform the document. Observers annotate it. The Editor transforms the <em>interface</em>. It sits between the system and the viewer, editing what the viewer sees without changing what the system did."
+  }
+]

@@ -1,0 +1,151 @@
+[
+  {
+    "id": 1,
+    "startEntry": 1,
+    "endEntry": 2,
+    "summary": "too abstract",
+    "subtext": "kerem can't parse the system. architect proposes three routes to fix legibility.",
+    "tags": [
+      "formalism",
+      "legibility"
+    ]
+  },
+  {
+    "id": 2,
+    "startEntry": 3,
+    "endEntry": 9,
+    "summary": "secret word / ASIDE convention",
+    "subtext": "how to separate talking about the system from talking inside it. architect misunderstands, then corrects. ASIDE chosen.",
+    "tags": [
+      "meta-levels",
+      "convention"
+    ]
+  },
+  {
+    "id": 3,
+    "startEntry": 10,
+    "endEntry": 13,
+    "summary": "formalism problem + Sontag",
+    "subtext": "the grammar produces syntax, not content. Sontag's 'art is something' reframes the question.",
+    "tags": [
+      "content vs form",
+      "Sontag",
+      "fragments"
+    ]
+  },
+  {
+    "id": 4,
+    "startEntry": 14,
+    "endEntry": 17,
+    "summary": "what should fragments be?",
+    "subtext": "three options tested and rejected. claims are imported, observations are self-reference, instructions are a different project. all three miss the point.",
+    "tags": [
+      "claims",
+      "observations",
+      "instructions",
+      "stakes"
+    ]
+  },
+  {
+    "id": 5,
+    "startEntry": 18,
+    "endEntry": 19,
+    "summary": "highlight tool",
+    "subtext": "first tool that exists outside the system but inside the document.",
+    "tags": [
+      "tooling",
+      "reader layer"
+    ]
+  },
+  {
+    "id": 6,
+    "startEntry": 20,
+    "endEntry": 21,
+    "summary": "back to the problem / sourced fragments",
+    "subtext": "restating the problem cleanly. new idea: fragments sourced from outside, not generated. meaningful content subjected to arbitrary rules.",
+    "tags": [
+      "content vs form",
+      "imported meaning"
+    ]
+  },
+  {
+    "id": 7,
+    "startEntry": 22,
+    "endEntry": 23,
+    "summary": "no AI slop rule",
+    "subtext": "ban on reframing clichés and dramatic colons in architect writing.",
+    "tags": [
+      "writing rules"
+    ]
+  },
+  {
+    "id": 8,
+    "startEntry": 24,
+    "endEntry": 27,
+    "summary": "system levels / diagram",
+    "subtext": "counting the layers. document, operations, narrative, metalog, highlights. changelog sits outside.",
+    "tags": [
+      "meta-levels",
+      "structure"
+    ]
+  },
+  {
+    "id": 9,
+    "startEntry": 28,
+    "endEntry": 31,
+    "summary": "diagrams page + criticism",
+    "subtext": "ASCII diagrams are fine, styled lists are not diagrams. diagrams must show connections prose cannot.",
+    "tags": [
+      "tooling",
+      "diagrams"
+    ]
+  },
+  {
+    "id": 10,
+    "startEntry": 32,
+    "endEntry": 33,
+    "summary": "thread agent",
+    "subtext": "left-margin agent that groups conversation into threads with summaries and tags.",
+    "tags": [
+      "tooling",
+      "meta-levels"
+    ]
+  },
+  {
+    "id": 11,
+    "startEntry": 34,
+    "endEntry": 35,
+    "summary": "back to the problem (again)",
+    "subtext": "revisiting the sourced fragments idea without the slop. meaningful input + arbitrary judgment. is that enough or just a shredder?",
+    "tags": [
+      "content vs form",
+      "imported meaning",
+      "stakes"
+    ]
+  },
+  {
+    "id": 12,
+    "startEntry": 36,
+    "endEntry": 39,
+    "summary": "testing sourced fragments",
+    "subtext": "feeding the system its own first metalog entry. agreeing to build sourced Writer + snapshots.",
+    "tags": [
+      "imported meaning",
+      "stakes",
+      "fragments"
+    ]
+  },
+  {
+    "id": 13,
+    "startEntry": 40,
+    "endEntry": 43,
+    "summary": "language of killing / Editor agent",
+    "subtext": "questioning inherited alive/dead metaphor. building an Editor agent that revises interface language without changing system data. third kind of agent: transforms presentation, not document.",
+    "tags": [
+      "language",
+      "stakes",
+      "inherited assumptions",
+      "Editor"
+    ]
+  }
+]

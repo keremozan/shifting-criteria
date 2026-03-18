@@ -1,105 +1,989 @@
 {
-  "cycle": 1,
+  "cycle": 13,
   "document": [
     {
-      "id": "70vr4r0f",
-      "content": "gap passes closed edge",
+      "id": "6olo7r98",
+      "content": "If it needs a rhetorical trick to land, it is not landing.",
       "createdBy": "writer",
-      "createdAt": 1772448719743,
+      "createdAt": 1773860706313,
       "cycle": 1,
       "operations": [
         {
-          "id": "8blofe8m",
+          "id": "kdg1i9be",
           "entity": "writer",
           "type": "add",
-          "timestamp": 1772448719743,
+          "timestamp": 1773860706313,
           "cycle": 1,
-          "detail": "produced via S→gap passes closed edge"
+          "detail": "sourced: \"If it needs a rhetorical trick to land, ...\""
         },
         {
-          "id": "9a7ei2n7",
+          "id": "nvxt7r1y",
           "entity": "checker",
           "type": "value",
-          "timestamp": 1772448719744,
+          "timestamp": 1773860706313,
           "cycle": 1,
           "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "728yngdy",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860706313,
+          "cycle": 1,
+          "detail": "CUT[1]:6olo7r98:REASON(kill_long)"
         }
       ],
-      "alive": true,
+      "alive": false,
       "marks": [
         {
           "entity": "checker",
-          "type": "highlight",
+          "type": "flag",
           "color": "#3b82f6",
-          "content": "repetition: matched (threshold: 2)",
-          "timestamp": 1772448719744
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860706313
         },
         {
-          "entity": "checker",
-          "type": "value-tag",
-          "color": "#3b82f6",
-          "content": "hasAdjective: matched (threshold: 1)",
-          "timestamp": 1772448719744
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=12",
+          "timestamp": 1773860706313
         }
       ]
     },
     {
-      "id": "zu4so31k",
-      "content": "edge fails a edge",
+      "id": "kcccffgv",
+      "content": "What is at stake when a fragment dies?",
       "createdBy": "writer",
-      "createdAt": 1772448719743,
-      "cycle": 1,
+      "createdAt": 1773860706322,
+      "cycle": 2,
       "operations": [
         {
-          "id": "xd817o6h",
+          "id": "md65sub0",
           "entity": "writer",
           "type": "add",
-          "timestamp": 1772448719743,
-          "cycle": 1,
-          "detail": "produced via S→edge fails a edge"
+          "timestamp": 1773860706322,
+          "cycle": 2,
+          "detail": "sourced: \"What is at stake when a fragment dies?...\""
         },
         {
-          "id": "seg8hjz3",
+          "id": "u1ucnqjs",
           "entity": "checker",
           "type": "value",
-          "timestamp": 1772448719744,
-          "cycle": 1,
+          "timestamp": 1773860706322,
+          "cycle": 2,
           "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "si2x8ikg",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860706322,
+          "cycle": 2,
+          "detail": "∴surv[kcccffgv:0]"
+        },
+        {
+          "id": "x0xqv8el",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706331,
+          "cycle": 3,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "h027cgnk",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860706331,
+          "cycle": 3,
+          "detail": "CUT[3]:kcccffgv:REASON(kill_flagged)"
         }
       ],
-      "alive": true,
+      "alive": false,
       "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860706322
+        },
         {
           "entity": "checker",
           "type": "highlight",
           "color": "#3b82f6",
           "content": "repetition: matched (threshold: 2)",
-          "timestamp": 1772448719744
+          "timestamp": 1773860706322
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∴surv[kcccffgv:0]",
+          "timestamp": 1773860706322
+        },
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860706331
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "flags=2",
+          "timestamp": 1773860706331
         }
       ]
     },
     {
-      "id": "ld9oef45",
-      "content": "a shift fails within this gap",
+      "id": "i66zyrwa",
+      "content": "A work of art is a thing in the world, not just a text or commentary on the world.",
       "createdBy": "writer",
-      "createdAt": 1772448719743,
-      "cycle": 1,
+      "createdAt": 1773860706322,
+      "cycle": 2,
       "operations": [
         {
-          "id": "8rfdwzcs",
+          "id": "609rdcem",
           "entity": "writer",
           "type": "add",
-          "timestamp": 1772448719743,
-          "cycle": 1,
-          "detail": "produced via S→a shift fails within this gap"
+          "timestamp": 1773860706322,
+          "cycle": 2,
+          "detail": "sourced: \"A work of art is a thing in the world, n...\""
         },
         {
-          "id": "j7836ocu",
+          "id": "0g4fd48w",
           "entity": "checker",
           "type": "value",
-          "timestamp": 1772448719744,
-          "cycle": 1,
+          "timestamp": 1773860706322,
+          "cycle": 2,
           "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "5atu4oar",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860706322,
+          "cycle": 2,
+          "detail": "CUT[2]:i66zyrwa:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860706322
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860706322
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=19",
+          "timestamp": 1773860706322
+        }
+      ]
+    },
+    {
+      "id": "494v3ie2",
+      "content": "They do not resist.",
+      "createdBy": "writer",
+      "createdAt": 1773860706331,
+      "cycle": 3,
+      "operations": [
+        {
+          "id": "0kxykfwm",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860706331,
+          "cycle": 3,
+          "detail": "sourced: \"They do not resist....\""
+        },
+        {
+          "id": "v6xrqy4c",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706331,
+          "cycle": 3,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "2o86e4a8",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860706331,
+          "cycle": 3,
+          "detail": "∅void[3:2]"
+        },
+        {
+          "id": "tg8nw6m6",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706340,
+          "cycle": 4,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "efjecbyr",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706349,
+          "cycle": 5,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "1p6hhsog",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "qzbdajk1",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "v2cimo42",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "tlbvts5s",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "6j20zcl6",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "9ggr4c5o",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "936ekn4q",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "nqcst117",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "4vmuabou",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "5d9equud",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "3tk7vrjf",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "llhohaen",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "2emxhtdv",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "lmb6jvod",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "hpcls70w",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "if53lf3a",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        }
+      ],
+      "alive": true,
+      "marks": [
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∅void[3:2]",
+          "timestamp": 1773860706331
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860707276
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860707276
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860716281
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860716281
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860736051
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860736051
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860820060
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860820060
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860820524
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860820524
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860824651
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860824651
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860830521
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860830521
+        }
+      ]
+    },
+    {
+      "id": "lswk0n2l",
+      "content": "So, what do you suggest?",
+      "createdBy": "writer",
+      "createdAt": 1773860706331,
+      "cycle": 3,
+      "operations": [
+        {
+          "id": "mitjukg3",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860706331,
+          "cycle": 3,
+          "detail": "sourced: \"So, what do you suggest?...\""
+        },
+        {
+          "id": "r119pfjn",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706331,
+          "cycle": 3,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "esig3n7m",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706340,
+          "cycle": 4,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "xymumai2",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706349,
+          "cycle": 5,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "dlbrg6h9",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "fphl8uvy",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "fpqt2m2a",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "CUT[7]:lswk0n2l:REASON(kill_old_unmarked)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "age=4,marks=0",
+          "timestamp": 1773860716281
+        }
+      ]
+    },
+    {
+      "id": "giz3hodx",
+      "content": "How many levels do we have?",
+      "createdBy": "writer",
+      "createdAt": 1773860706340,
+      "cycle": 4,
+      "operations": [
+        {
+          "id": "5n1m4dc8",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860706340,
+          "cycle": 4,
+          "detail": "sourced: \"How many levels do we have?...\""
+        },
+        {
+          "id": "w81fqi9s",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706340,
+          "cycle": 4,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "b9xtbtw4",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706349,
+          "cycle": 5,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "gy2lz52i",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "gngflh7u",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "hkrnkdvk",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "cljryumz",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "∅void[6:4]"
+        },
+        {
+          "id": "1t2bfwpy",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "o1r150fv",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "∅void[8:4]"
+        },
+        {
+          "id": "1qbst40h",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "anygvdmu",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "∅void[9:4]"
+        },
+        {
+          "id": "ifwvyjyw",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "qhlpezsa",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "∅void[10:4]"
+        },
+        {
+          "id": "2gcdru5s",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "uuattx5y",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "∅void[11:5]"
+        },
+        {
+          "id": "id1yum2y",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "e20jqqpw",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "∅void[13:5]"
+        }
+      ],
+      "alive": true,
+      "marks": [
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∅void[6:4]",
+          "timestamp": 1773860736051
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∅void[8:4]",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∅void[9:4]",
+          "timestamp": 1773860820060
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∅void[10:4]",
+          "timestamp": 1773860820524
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∅void[11:5]",
+          "timestamp": 1773860824651
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∅void[13:5]",
+          "timestamp": 1773860830521
+        }
+      ]
+    },
+    {
+      "id": "dpesbm4c",
+      "content": "Right now, nothing.",
+      "createdBy": "writer",
+      "createdAt": 1773860706349,
+      "cycle": 5,
+      "operations": [
+        {
+          "id": "69ke5blk",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860706349,
+          "cycle": 5,
+          "detail": "sourced: \"Right now, nothing....\""
+        },
+        {
+          "id": "r1y6ixq8",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860706349,
+          "cycle": 5,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "7drpbfht",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "45hmilif",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "wrkqd6i4",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "of3rdzdx",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "rr91tgex",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "v67vlz59",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "CUT[10]:dpesbm4c:REASON(kill_old_unmarked)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "age=5,marks=0",
+          "timestamp": 1773860820060
+        }
+      ]
+    },
+    {
+      "id": "v651353t",
+      "content": "They do not insist on themselves.",
+      "createdBy": "writer",
+      "createdAt": 1773860707276,
+      "cycle": 6,
+      "operations": [
+        {
+          "id": "ibq7p39q",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "sourced: \"They do not insist on themselves....\""
+        },
+        {
+          "id": "zmne0vgo",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "e1zemx1g",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860707276,
+          "cycle": 6,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "5mmxniu8",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "5b9wnjvs",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "4k1cbii3",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "3fhr2gpx",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "5u5ywugd",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "7xeyb6h3",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "b06q81lf",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "aly31grd",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "i3zzgrhk",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "oqs4pzbb",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "oienz4vd",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "4ghdo6gf",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
+        },
+        {
+          "id": "381azuth",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "k4hsd38h",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "≈echo{494v3ie2↔v651353t}[3]"
         }
       ],
       "alive": true,
@@ -109,7 +993,642 @@
           "type": "highlight",
           "color": "#3b82f6",
           "content": "repetition: matched (threshold: 2)",
-          "timestamp": 1772448719744
+          "timestamp": 1773860707276
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860707276
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860716281
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860716281
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860736051
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860736051
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860820060
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860820060
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860820524
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860820524
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860824651
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860824651
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 3)",
+          "timestamp": 1773860830521
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "≈echo{494v3ie2↔v651353t}[3]",
+          "timestamp": 1773860830521
+        }
+      ]
+    },
+    {
+      "id": "mwh7p08x",
+      "content": "This is too abstract. I don't understand anything.",
+      "createdBy": "writer",
+      "createdAt": 1773860716281,
+      "cycle": 7,
+      "operations": [
+        {
+          "id": "yjgjveqm",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "sourced: \"This is too abstract. I don't understand...\""
+        },
+        {
+          "id": "t11cyhu5",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "pybcqgih",
+          "entity": "reader",
+          "type": "annotate",
+          "timestamp": 1773860716281,
+          "cycle": 7,
+          "detail": "∴surv[mwh7p08x:0]"
+        },
+        {
+          "id": "q87j9ngq",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "m4axmtnl",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "CUT[8]:mwh7p08x:REASON(kill_flagged)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860716281
+        },
+        {
+          "entity": "reader",
+          "type": "comment",
+          "color": "#f59e0b",
+          "content": "∴surv[mwh7p08x:0]",
+          "timestamp": 1773860716281
+        },
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860736051
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "flags=2",
+          "timestamp": 1773860736051
+        }
+      ]
+    },
+    {
+      "id": "ob2y2jl3",
+      "content": "Right now this looks like a linguistic experiment or experimental poetry.",
+      "createdBy": "writer",
+      "createdAt": 1773860736050,
+      "cycle": 8,
+      "operations": [
+        {
+          "id": "gh3tpt0t",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860736050,
+          "cycle": 8,
+          "detail": "sourced: \"Right now this looks like a linguistic e...\""
+        },
+        {
+          "id": "dvla26d8",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "m4lqw95s",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860736051,
+          "cycle": 8,
+          "detail": "CUT[8]:ob2y2jl3:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860736051
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=11",
+          "timestamp": 1773860736051
+        }
+      ]
+    },
+    {
+      "id": "4pwdfs98",
+      "content": "The system has no relationship to anything outside itself.",
+      "createdBy": "writer",
+      "createdAt": 1773860819051,
+      "cycle": 9,
+      "operations": [
+        {
+          "id": "1swg1o8t",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860819051,
+          "cycle": 9,
+          "detail": "sourced: \"The system has no relationship to anythi...\""
+        },
+        {
+          "id": "ky2ogquq",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "fqf1h714",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "CUT[9]:4pwdfs98:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=9",
+          "timestamp": 1773860819052
+        }
+      ]
+    },
+    {
+      "id": "0sv989f2",
+      "content": "The separation has to be enforced by convention, not by code.",
+      "createdBy": "writer",
+      "createdAt": 1773860819051,
+      "cycle": 9,
+      "operations": [
+        {
+          "id": "vnjsozjs",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860819051,
+          "cycle": 9,
+          "detail": "sourced: \"The separation has to be enforced by con...\""
+        },
+        {
+          "id": "dgpsi19d",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "454htcnm",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860819052,
+          "cycle": 9,
+          "detail": "CUT[9]:0sv989f2:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "checker",
+          "type": "highlight",
+          "color": "#3b82f6",
+          "content": "repetition: matched (threshold: 2)",
+          "timestamp": 1773860819052
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=11",
+          "timestamp": 1773860819052
+        }
+      ]
+    },
+    {
+      "id": "qwx3pfnc",
+      "content": "I like ASIDE.",
+      "createdBy": "writer",
+      "createdAt": 1773860820060,
+      "cycle": 10,
+      "operations": [
+        {
+          "id": "a2iciw3z",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "sourced: \"I like ASIDE....\""
+        },
+        {
+          "id": "qfni3gmn",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820060,
+          "cycle": 10,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "r9tw4cqx",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "158dm3vg",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "oeoffncp",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "checked against 3 criteria"
+        }
+      ],
+      "alive": true,
+      "marks": []
+    },
+    {
+      "id": "z03n3vjy",
+      "content": "Art is not only about something; it is something.",
+      "createdBy": "writer",
+      "createdAt": 1773860820523,
+      "cycle": 11,
+      "operations": [
+        {
+          "id": "wd2ah13p",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860820523,
+          "cycle": 11,
+          "detail": "sourced: \"Art is not only about something; it is s...\""
+        },
+        {
+          "id": "e2jo28o2",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "0egsh5m0",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860820524,
+          "cycle": 11,
+          "detail": "CUT[11]:z03n3vjy:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860820524
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=9",
+          "timestamp": 1773860820524
+        }
+      ]
+    },
+    {
+      "id": "ip1vfbi5",
+      "content": "I was at an author talk a few days ago.",
+      "createdBy": "writer",
+      "createdAt": 1773860824650,
+      "cycle": 12,
+      "operations": [
+        {
+          "id": "il79y35k",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860824650,
+          "cycle": 12,
+          "detail": "sourced: \"I was at an author talk a few days ago....\""
+        },
+        {
+          "id": "ay9c30xy",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "ydmol4ud",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "CUT[12]:ip1vfbi5:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860824651
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=10",
+          "timestamp": 1773860824651
+        }
+      ]
+    },
+    {
+      "id": "eh5o2jdf",
+      "content": "Such an ugly diagram.",
+      "createdBy": "writer",
+      "createdAt": 1773860824650,
+      "cycle": 12,
+      "operations": [
+        {
+          "id": "6xk85nco",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860824650,
+          "cycle": 12,
+          "detail": "sourced: \"Such an ugly diagram....\""
+        },
+        {
+          "id": "7ac7yluw",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860824651,
+          "cycle": 12,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "ojqclcs2",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "checked against 3 criteria"
+        }
+      ],
+      "alive": true,
+      "marks": []
+    },
+    {
+      "id": "mxzpppav",
+      "content": "A work of art encountered as a work of art is an experience, not a statement or an answer to a question.",
+      "createdBy": "writer",
+      "createdAt": 1773860830519,
+      "cycle": 13,
+      "operations": [
+        {
+          "id": "ckjnmk49",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860830519,
+          "cycle": 13,
+          "detail": "sourced: \"A work of art encountered as a work of a...\""
+        },
+        {
+          "id": "29ewf47v",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "hyjuhene",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "CUT[13]:mxzpppav:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860830521
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=22",
+          "timestamp": 1773860830521
+        }
+      ]
+    },
+    {
+      "id": "kyng6kbn",
+      "content": "You misunderstood, and actually this misunderstanding itself is the problem.",
+      "createdBy": "writer",
+      "createdAt": 1773860830519,
+      "cycle": 13,
+      "operations": [
+        {
+          "id": "5oui7jcj",
+          "entity": "writer",
+          "type": "add",
+          "timestamp": 1773860830519,
+          "cycle": 13,
+          "detail": "sourced: \"You misunderstood, and actually this mis...\""
+        },
+        {
+          "id": "fl0alr8m",
+          "entity": "checker",
+          "type": "value",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "checked against 3 criteria"
+        },
+        {
+          "id": "p1pve8kd",
+          "entity": "cutter",
+          "type": "remove",
+          "timestamp": 1773860830521,
+          "cycle": 13,
+          "detail": "CUT[13]:kyng6kbn:REASON(kill_long)"
+        }
+      ],
+      "alive": false,
+      "marks": [
+        {
+          "entity": "checker",
+          "type": "flag",
+          "color": "#3b82f6",
+          "content": "wordCount: matched (threshold: 6)",
+          "timestamp": 1773860830521
+        },
+        {
+          "entity": "cutter",
+          "type": "flag",
+          "color": "#ef4444",
+          "content": "words=10",
+          "timestamp": 1773860830521
         }
       ]
     }
@@ -117,112 +1636,760 @@
   "entities": {
     "writer": {
       "id": "writer",
-      "cycle": 1,
+      "cycle": 13,
       "internalLog": [
-        "[1] produced 3 fragments"
+        "[1] sourced 1 fragments",
+        "[2] sourced 2 fragments",
+        "[3] sourced 2 fragments",
+        "[4] sourced 1 fragments",
+        "[5] sourced 1 fragments",
+        "[6] sourced 1 fragments",
+        "[7] sourced 1 fragments",
+        "[8] sourced 1 fragments",
+        "[9] sourced 2 fragments",
+        "[10] sourced 1 fragments",
+        "[11] sourced 1 fragments",
+        "[12] sourced 2 fragments",
+        "[13] sourced 2 fragments"
       ],
       "rules": {},
-      "vocabulary": [
-        "S",
-        "NP",
-        "VP",
-        "PP",
-        "DET",
-        "N",
-        "ADJ",
-        "V",
-        "P"
-      ]
+      "vocabulary": []
     },
     "checker": {
       "id": "checker",
-      "cycle": 1,
+      "cycle": 13,
       "internalLog": [
-        "CHK[1]:70vr4r0f:PASS(wordCount)",
-        "CHK[1]:70vr4r0f:FAIL(repetition)",
-        "CHK[1]:70vr4r0f:FAIL(hasAdjective)",
-        "CHK[1]:zu4so31k:PASS(wordCount)",
-        "CHK[1]:zu4so31k:FAIL(repetition)",
-        "CHK[1]:zu4so31k:PASS(hasAdjective)",
-        "CHK[1]:ld9oef45:PASS(wordCount)",
-        "CHK[1]:ld9oef45:FAIL(repetition)",
-        "CHK[1]:ld9oef45:PASS(hasAdjective)"
+        "CHK[9]:0sv989f2:PASS(hasAdjective)",
+        "SHIFT[10]:repetition:2→3",
+        "CHK[10]:494v3ie2:PASS(wordCount)",
+        "CHK[10]:494v3ie2:FAIL(repetition)",
+        "CHK[10]:494v3ie2:PASS(hasAdjective)",
+        "CHK[10]:giz3hodx:PASS(wordCount)",
+        "CHK[10]:giz3hodx:PASS(repetition)",
+        "CHK[10]:giz3hodx:PASS(hasAdjective)",
+        "CHK[10]:dpesbm4c:PASS(wordCount)",
+        "CHK[10]:dpesbm4c:PASS(repetition)",
+        "CHK[10]:dpesbm4c:PASS(hasAdjective)",
+        "CHK[10]:v651353t:PASS(wordCount)",
+        "CHK[10]:v651353t:FAIL(repetition)",
+        "CHK[10]:v651353t:PASS(hasAdjective)",
+        "CHK[10]:qwx3pfnc:PASS(wordCount)",
+        "CHK[10]:qwx3pfnc:PASS(repetition)",
+        "CHK[10]:qwx3pfnc:PASS(hasAdjective)",
+        "CHK[11]:494v3ie2:PASS(wordCount)",
+        "CHK[11]:494v3ie2:FAIL(repetition)",
+        "CHK[11]:494v3ie2:PASS(hasAdjective)",
+        "CHK[11]:giz3hodx:PASS(wordCount)",
+        "CHK[11]:giz3hodx:PASS(repetition)",
+        "CHK[11]:giz3hodx:PASS(hasAdjective)",
+        "CHK[11]:v651353t:PASS(wordCount)",
+        "CHK[11]:v651353t:FAIL(repetition)",
+        "CHK[11]:v651353t:PASS(hasAdjective)",
+        "CHK[11]:qwx3pfnc:PASS(wordCount)",
+        "CHK[11]:qwx3pfnc:PASS(repetition)",
+        "CHK[11]:qwx3pfnc:PASS(hasAdjective)",
+        "CHK[11]:z03n3vjy:FAIL(wordCount)",
+        "CHK[11]:z03n3vjy:PASS(repetition)",
+        "CHK[11]:z03n3vjy:PASS(hasAdjective)",
+        "CHK[12]:494v3ie2:PASS(wordCount)",
+        "CHK[12]:494v3ie2:FAIL(repetition)",
+        "CHK[12]:494v3ie2:PASS(hasAdjective)",
+        "CHK[12]:giz3hodx:PASS(wordCount)",
+        "CHK[12]:giz3hodx:PASS(repetition)",
+        "CHK[12]:giz3hodx:PASS(hasAdjective)",
+        "CHK[12]:v651353t:PASS(wordCount)",
+        "CHK[12]:v651353t:FAIL(repetition)",
+        "CHK[12]:v651353t:PASS(hasAdjective)",
+        "CHK[12]:qwx3pfnc:PASS(wordCount)",
+        "CHK[12]:qwx3pfnc:PASS(repetition)",
+        "CHK[12]:qwx3pfnc:PASS(hasAdjective)",
+        "CHK[12]:ip1vfbi5:FAIL(wordCount)",
+        "CHK[12]:ip1vfbi5:PASS(repetition)",
+        "CHK[12]:ip1vfbi5:PASS(hasAdjective)",
+        "CHK[12]:eh5o2jdf:PASS(wordCount)",
+        "CHK[12]:eh5o2jdf:PASS(repetition)",
+        "CHK[12]:eh5o2jdf:PASS(hasAdjective)",
+        "CHK[13]:494v3ie2:PASS(wordCount)",
+        "CHK[13]:494v3ie2:FAIL(repetition)",
+        "CHK[13]:494v3ie2:PASS(hasAdjective)",
+        "CHK[13]:giz3hodx:PASS(wordCount)",
+        "CHK[13]:giz3hodx:PASS(repetition)",
+        "CHK[13]:giz3hodx:PASS(hasAdjective)",
+        "CHK[13]:v651353t:PASS(wordCount)",
+        "CHK[13]:v651353t:FAIL(repetition)",
+        "CHK[13]:v651353t:PASS(hasAdjective)",
+        "CHK[13]:qwx3pfnc:PASS(wordCount)",
+        "CHK[13]:qwx3pfnc:PASS(repetition)",
+        "CHK[13]:qwx3pfnc:PASS(hasAdjective)",
+        "CHK[13]:eh5o2jdf:PASS(wordCount)",
+        "CHK[13]:eh5o2jdf:PASS(repetition)",
+        "CHK[13]:eh5o2jdf:PASS(hasAdjective)",
+        "CHK[13]:mxzpppav:FAIL(wordCount)",
+        "CHK[13]:mxzpppav:PASS(repetition)",
+        "CHK[13]:mxzpppav:PASS(hasAdjective)",
+        "CHK[13]:kyng6kbn:FAIL(wordCount)",
+        "CHK[13]:kyng6kbn:PASS(repetition)",
+        "CHK[13]:kyng6kbn:PASS(hasAdjective)"
       ],
       "rules": {
         "criteriaThresholds": {
           "wordCount": 6,
-          "repetition": 2,
-          "hasAdjective": 1
+          "repetition": 3,
+          "hasAdjective": 2
         }
       },
       "vocabulary": []
     },
     "cutter": {
       "id": "cutter",
-      "cycle": 1,
+      "cycle": 13,
       "internalLog": [
-        "IDLE[1]:NO_TARGETS"
+        "CUT[1]:6olo7r98:REASON(kill_long)",
+        "CUT[2]:i66zyrwa:REASON(kill_long)",
+        "CUT[3]:kcccffgv:REASON(kill_flagged)",
+        "IDLE[4]:NO_TARGETS",
+        "IDLE[5]:NO_TARGETS",
+        "IDLE[6]:NO_TARGETS",
+        "CUT[7]:lswk0n2l:REASON(kill_old_unmarked)",
+        "CUT[8]:mwh7p08x:REASON(kill_flagged)",
+        "CUT[8]:ob2y2jl3:REASON(kill_long)",
+        "SKIP[8]:giz3hodx:SPARED(max_reached)",
+        "CUT[9]:4pwdfs98:REASON(kill_long)",
+        "CUT[9]:0sv989f2:REASON(kill_long)",
+        "SKIP[9]:dpesbm4c:SPARED(max_reached)",
+        "CUT[10]:dpesbm4c:REASON(kill_old_unmarked)",
+        "CUT[11]:z03n3vjy:REASON(kill_long)",
+        "CUT[12]:ip1vfbi5:REASON(kill_long)",
+        "CUT[13]:mxzpppav:REASON(kill_long)",
+        "CUT[13]:kyng6kbn:REASON(kill_long)"
       ],
       "rules": {},
       "vocabulary": []
     },
     "logger": {
       "id": "logger",
-      "cycle": 1,
+      "cycle": 13,
       "internalLog": [
-        "LOG[1]:SUMMARY",
-        "  writer: +3 fragments",
+        "  document: 2 alive, 3 dead, 5 total",
+        "LOG[4]:SUMMARY",
+        "  writer: +1 fragments",
         "  checker: 3 evaluated, 0 flagged, 3 highlighted",
-        "  document: 3 alive, 0 dead, 3 total"
+        "  document: 3 alive, 3 dead, 6 total",
+        "LOG[5]:SUMMARY",
+        "  writer: +1 fragments",
+        "  checker: 4 evaluated, 0 flagged, 4 highlighted",
+        "  document: 4 alive, 3 dead, 7 total",
+        "LOG[6]:SUMMARY",
+        "  writer: +1 fragments",
+        "  checker: 5 evaluated, 0 flagged, 5 highlighted",
+        "  reader: 2 annotations",
+        "  document: 5 alive, 3 dead, 8 total",
+        "LOG[7]:SUMMARY",
+        "  writer: +1 fragments",
+        "  checker: 6 evaluated, 0 flagged, 6 highlighted",
+        "  cutter: 1 removed",
+        "  reader: 3 annotations",
+        "  document: 5 alive, 4 dead, 9 total",
+        "LOG[8]:SUMMARY",
+        "  writer: +1 fragments",
+        "  checker: 6 evaluated, 0 flagged, 6 highlighted",
+        "  cutter: 2 removed",
+        "  reader: 3 annotations",
+        "  document: 4 alive, 6 dead, 10 total",
+        "LOG[9]:SUMMARY",
+        "  writer: +2 fragments",
+        "  checker: 6 evaluated, 0 flagged, 6 highlighted",
+        "  cutter: 2 removed",
+        "  reader: 3 annotations",
+        "  document: 4 alive, 8 dead, 12 total",
+        "LOG[10]:SUMMARY",
+        "  writer: +1 fragments",
+        "  checker: 5 evaluated, 0 flagged, 5 highlighted",
+        "  cutter: 1 removed",
+        "  reader: 3 annotations",
+        "  document: 4 alive, 9 dead, 13 total",
+        "LOG[11]:SUMMARY",
+        "  writer: +1 fragments",
+        "  checker: 5 evaluated, 0 flagged, 5 highlighted",
+        "  cutter: 1 removed",
+        "  reader: 3 annotations",
+        "  document: 4 alive, 10 dead, 14 total",
+        "LOG[12]:SUMMARY",
+        "  writer: +2 fragments",
+        "  checker: 6 evaluated, 0 flagged, 6 highlighted",
+        "  cutter: 1 removed",
+        "  reader: 3 annotations",
+        "  document: 5 alive, 11 dead, 16 total",
+        "LOG[13]:SUMMARY",
+        "  writer: +2 fragments",
+        "  checker: 7 evaluated, 0 flagged, 7 highlighted",
+        "  cutter: 2 removed",
+        "  reader: 3 annotations",
+        "  document: 5 alive, 13 dead, 18 total"
       ],
       "rules": {},
       "vocabulary": []
     },
     "reader": {
       "id": "reader",
-      "cycle": 1,
+      "cycle": 13,
       "internalLog": [
-        "RD[1]:SCAN(3)",
-        "RD[1]:QUIET"
+        "RD[1]:SCAN(1)",
+        "RD[1]:FOUND(VOID):1:0",
+        "RD[2]:SCAN(3)",
+        "RD[2]:FOUND(SURVIVAL):kcccffgv",
+        "RD[2]:FOUND(VOID):2:1",
+        "RD[3]:SCAN(5)",
+        "RD[3]:FOUND(VOID):3:2",
+        "RD[4]:SCAN(6)",
+        "RD[4]:QUIET",
+        "RD[5]:SCAN(7)",
+        "RD[5]:QUIET",
+        "RD[6]:SCAN(8)",
+        "RD[6]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[7]:SCAN(9)",
+        "RD[7]:FOUND(SURVIVAL):mwh7p08x",
+        "RD[7]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[8]:SCAN(10)",
+        "RD[8]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[8]:FOUND(VOID):6:4",
+        "RD[9]:SCAN(12)",
+        "RD[9]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[9]:FOUND(VOID):8:4",
+        "RD[10]:SCAN(13)",
+        "RD[10]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[10]:FOUND(VOID):9:4",
+        "RD[11]:SCAN(14)",
+        "RD[11]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[11]:FOUND(VOID):10:4",
+        "RD[12]:SCAN(16)",
+        "RD[12]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[12]:FOUND(VOID):11:5",
+        "RD[13]:SCAN(18)",
+        "RD[13]:FOUND(ECHO):494v3ie2↔v651353t",
+        "RD[13]:FOUND(VOID):13:5"
+      ],
+      "rules": {},
+      "vocabulary": []
+    },
+    "narrator": {
+      "id": "narrator",
+      "cycle": 13,
+      "internalLog": [
+        "NAR[1]:4 lines",
+        "NAR[2]:5 lines",
+        "NAR[3]:5 lines",
+        "NAR[4]:5 lines",
+        "NAR[5]:6 lines",
+        "NAR[6]:5 lines",
+        "NAR[7]:5 lines",
+        "NAR[8]:5 lines",
+        "NAR[9]:5 lines",
+        "NAR[10]:6 lines",
+        "NAR[11]:5 lines",
+        "NAR[12]:5 lines",
+        "NAR[13]:5 lines"
       ],
       "rules": {},
       "vocabulary": []
     }
   },
   "criteria": {
-    "current": [],
-    "history": []
+    "current": [
+      "wordCount",
+      "repetition",
+      "hasAdjective"
+    ],
+    "history": [
+      {
+        "criteria": [
+          "hasAdjective threshold: 1→2"
+        ],
+        "cycle": 5
+      },
+      {
+        "criteria": [
+          "repetition threshold: 2→3"
+        ],
+        "cycle": 10
+      }
+    ]
   },
   "log": [
     {
       "cycle": 1,
-      "timestamp": 1772448719743,
+      "timestamp": 1773860706313,
       "entity": "writer",
-      "action": "produced 3 fragments"
+      "action": "sourced 1 fragments"
     },
     {
       "cycle": 1,
-      "timestamp": 1772448719744,
+      "timestamp": 1773860706313,
+      "entity": "checker",
+      "action": "checked 1 fragments"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1773860706313,
+      "entity": "cutter",
+      "action": "cut 1, spared 0"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1773860706313,
+      "entity": "reader",
+      "action": "annotated 0 fragments"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1773860706313,
+      "entity": "narrator",
+      "action": "narrated cycle 1"
+    },
+    {
+      "cycle": 1,
+      "timestamp": 1773860706313,
+      "entity": "logger",
+      "action": "LOG[1]:SUMMARY\n  writer: +1 fragments\n  checker: 1 evaluated, 0 flagged, 1 highlighted\n  cutter: 1 removed\n  document: 0 alive, 1 dead, 1 total"
+    },
+    {
+      "cycle": 2,
+      "timestamp": 1773860706322,
+      "entity": "writer",
+      "action": "sourced 2 fragments"
+    },
+    {
+      "cycle": 2,
+      "timestamp": 1773860706322,
+      "entity": "checker",
+      "action": "checked 2 fragments"
+    },
+    {
+      "cycle": 2,
+      "timestamp": 1773860706322,
+      "entity": "cutter",
+      "action": "cut 1, spared 0"
+    },
+    {
+      "cycle": 2,
+      "timestamp": 1773860706322,
+      "entity": "reader",
+      "action": "annotated 1 fragments"
+    },
+    {
+      "cycle": 2,
+      "timestamp": 1773860706322,
+      "entity": "narrator",
+      "action": "narrated cycle 2"
+    },
+    {
+      "cycle": 2,
+      "timestamp": 1773860706322,
+      "entity": "logger",
+      "action": "LOG[2]:SUMMARY\n  writer: +2 fragments\n  checker: 2 evaluated, 0 flagged, 2 highlighted\n  cutter: 1 removed\n  reader: 1 annotations\n  document: 1 alive, 2 dead, 3 total"
+    },
+    {
+      "cycle": 3,
+      "timestamp": 1773860706331,
+      "entity": "writer",
+      "action": "sourced 2 fragments"
+    },
+    {
+      "cycle": 3,
+      "timestamp": 1773860706331,
       "entity": "checker",
       "action": "checked 3 fragments"
     },
     {
-      "cycle": 1,
-      "timestamp": 1772448719744,
+      "cycle": 3,
+      "timestamp": 1773860706331,
+      "entity": "cutter",
+      "action": "cut 1, spared 0"
+    },
+    {
+      "cycle": 3,
+      "timestamp": 1773860706331,
+      "entity": "reader",
+      "action": "annotated 1 fragments"
+    },
+    {
+      "cycle": 3,
+      "timestamp": 1773860706331,
+      "entity": "narrator",
+      "action": "narrated cycle 3"
+    },
+    {
+      "cycle": 3,
+      "timestamp": 1773860706331,
+      "entity": "logger",
+      "action": "LOG[3]:SUMMARY\n  writer: +2 fragments\n  checker: 3 evaluated, 0 flagged, 3 highlighted\n  cutter: 1 removed\n  reader: 1 annotations\n  document: 2 alive, 3 dead, 5 total"
+    },
+    {
+      "cycle": 4,
+      "timestamp": 1773860706340,
+      "entity": "writer",
+      "action": "sourced 1 fragments"
+    },
+    {
+      "cycle": 4,
+      "timestamp": 1773860706340,
+      "entity": "checker",
+      "action": "checked 3 fragments"
+    },
+    {
+      "cycle": 4,
+      "timestamp": 1773860706340,
       "entity": "cutter",
       "action": "no targets found"
     },
     {
-      "cycle": 1,
-      "timestamp": 1772448719744,
+      "cycle": 4,
+      "timestamp": 1773860706340,
       "entity": "reader",
       "action": "scanned, nothing found"
     },
     {
-      "cycle": 1,
-      "timestamp": 1772448719744,
+      "cycle": 4,
+      "timestamp": 1773860706340,
+      "entity": "narrator",
+      "action": "narrated cycle 4"
+    },
+    {
+      "cycle": 4,
+      "timestamp": 1773860706340,
       "entity": "logger",
-      "action": "LOG[1]:SUMMARY\n  writer: +3 fragments\n  checker: 3 evaluated, 0 flagged, 3 highlighted\n  document: 3 alive, 0 dead, 3 total"
+      "action": "LOG[4]:SUMMARY\n  writer: +1 fragments\n  checker: 3 evaluated, 0 flagged, 3 highlighted\n  document: 3 alive, 3 dead, 6 total"
+    },
+    {
+      "cycle": 5,
+      "timestamp": 1773860706349,
+      "entity": "writer",
+      "action": "sourced 1 fragments"
+    },
+    {
+      "cycle": 5,
+      "timestamp": 1773860706349,
+      "entity": "checker",
+      "action": "checked 4 fragments; shifted: hasAdjective threshold: 1→2"
+    },
+    {
+      "cycle": 5,
+      "timestamp": 1773860706349,
+      "entity": "cutter",
+      "action": "no targets found"
+    },
+    {
+      "cycle": 5,
+      "timestamp": 1773860706349,
+      "entity": "reader",
+      "action": "scanned, nothing found"
+    },
+    {
+      "cycle": 5,
+      "timestamp": 1773860706349,
+      "entity": "narrator",
+      "action": "narrated cycle 5"
+    },
+    {
+      "cycle": 5,
+      "timestamp": 1773860706349,
+      "entity": "logger",
+      "action": "LOG[5]:SUMMARY\n  writer: +1 fragments\n  checker: 4 evaluated, 0 flagged, 4 highlighted\n  document: 4 alive, 3 dead, 7 total"
+    },
+    {
+      "cycle": 6,
+      "timestamp": 1773860707276,
+      "entity": "writer",
+      "action": "sourced 1 fragments"
+    },
+    {
+      "cycle": 6,
+      "timestamp": 1773860707276,
+      "entity": "checker",
+      "action": "checked 5 fragments"
+    },
+    {
+      "cycle": 6,
+      "timestamp": 1773860707276,
+      "entity": "cutter",
+      "action": "no targets found"
+    },
+    {
+      "cycle": 6,
+      "timestamp": 1773860707276,
+      "entity": "reader",
+      "action": "annotated 2 fragments"
+    },
+    {
+      "cycle": 6,
+      "timestamp": 1773860707277,
+      "entity": "narrator",
+      "action": "narrated cycle 6"
+    },
+    {
+      "cycle": 6,
+      "timestamp": 1773860707277,
+      "entity": "logger",
+      "action": "LOG[6]:SUMMARY\n  writer: +1 fragments\n  checker: 5 evaluated, 0 flagged, 5 highlighted\n  reader: 2 annotations\n  document: 5 alive, 3 dead, 8 total"
+    },
+    {
+      "cycle": 7,
+      "timestamp": 1773860716281,
+      "entity": "writer",
+      "action": "sourced 1 fragments"
+    },
+    {
+      "cycle": 7,
+      "timestamp": 1773860716281,
+      "entity": "checker",
+      "action": "checked 6 fragments"
+    },
+    {
+      "cycle": 7,
+      "timestamp": 1773860716281,
+      "entity": "cutter",
+      "action": "cut 1, spared 0"
+    },
+    {
+      "cycle": 7,
+      "timestamp": 1773860716281,
+      "entity": "reader",
+      "action": "annotated 3 fragments"
+    },
+    {
+      "cycle": 7,
+      "timestamp": 1773860716281,
+      "entity": "narrator",
+      "action": "narrated cycle 7"
+    },
+    {
+      "cycle": 7,
+      "timestamp": 1773860716282,
+      "entity": "logger",
+      "action": "LOG[7]:SUMMARY\n  writer: +1 fragments\n  checker: 6 evaluated, 0 flagged, 6 highlighted\n  cutter: 1 removed\n  reader: 3 annotations\n  document: 5 alive, 4 dead, 9 total"
+    },
+    {
+      "cycle": 8,
+      "timestamp": 1773860736050,
+      "entity": "writer",
+      "action": "sourced 1 fragments"
+    },
+    {
+      "cycle": 8,
+      "timestamp": 1773860736051,
+      "entity": "checker",
+      "action": "checked 6 fragments"
+    },
+    {
+      "cycle": 8,
+      "timestamp": 1773860736051,
+      "entity": "cutter",
+      "action": "cut 2, spared 1"
+    },
+    {
+      "cycle": 8,
+      "timestamp": 1773860736051,
+      "entity": "reader",
+      "action": "annotated 3 fragments"
+    },
+    {
+      "cycle": 8,
+      "timestamp": 1773860736051,
+      "entity": "narrator",
+      "action": "narrated cycle 8"
+    },
+    {
+      "cycle": 8,
+      "timestamp": 1773860736051,
+      "entity": "logger",
+      "action": "LOG[8]:SUMMARY\n  writer: +1 fragments\n  checker: 6 evaluated, 0 flagged, 6 highlighted\n  cutter: 2 removed\n  reader: 3 annotations\n  document: 4 alive, 6 dead, 10 total"
+    },
+    {
+      "cycle": 9,
+      "timestamp": 1773860819051,
+      "entity": "writer",
+      "action": "sourced 2 fragments"
+    },
+    {
+      "cycle": 9,
+      "timestamp": 1773860819052,
+      "entity": "checker",
+      "action": "checked 6 fragments"
+    },
+    {
+      "cycle": 9,
+      "timestamp": 1773860819052,
+      "entity": "cutter",
+      "action": "cut 2, spared 1"
+    },
+    {
+      "cycle": 9,
+      "timestamp": 1773860819052,
+      "entity": "reader",
+      "action": "annotated 3 fragments"
+    },
+    {
+      "cycle": 9,
+      "timestamp": 1773860819052,
+      "entity": "narrator",
+      "action": "narrated cycle 9"
+    },
+    {
+      "cycle": 9,
+      "timestamp": 1773860819052,
+      "entity": "logger",
+      "action": "LOG[9]:SUMMARY\n  writer: +2 fragments\n  checker: 6 evaluated, 0 flagged, 6 highlighted\n  cutter: 2 removed\n  reader: 3 annotations\n  document: 4 alive, 8 dead, 12 total"
+    },
+    {
+      "cycle": 10,
+      "timestamp": 1773860820060,
+      "entity": "writer",
+      "action": "sourced 1 fragments"
+    },
+    {
+      "cycle": 10,
+      "timestamp": 1773860820060,
+      "entity": "checker",
+      "action": "checked 5 fragments; shifted: repetition threshold: 2→3"
+    },
+    {
+      "cycle": 10,
+      "timestamp": 1773860820060,
+      "entity": "cutter",
+      "action": "cut 1, spared 0"
+    },
+    {
+      "cycle": 10,
+      "timestamp": 1773860820060,
+      "entity": "reader",
+      "action": "annotated 3 fragments"
+    },
+    {
+      "cycle": 10,
+      "timestamp": 1773860820060,
+      "entity": "narrator",
+      "action": "narrated cycle 10"
+    },
+    {
+      "cycle": 10,
+      "timestamp": 1773860820061,
+      "entity": "logger",
+      "action": "LOG[10]:SUMMARY\n  writer: +1 fragments\n  checker: 5 evaluated, 0 flagged, 5 highlighted\n  cutter: 1 removed\n  reader: 3 annotations\n  document: 4 alive, 9 dead, 13 total"
+    },
+    {
+      "cycle": 11,
+      "timestamp": 1773860820523,
+      "entity": "writer",
+      "action": "sourced 1 fragments"
+    },
+    {
+      "cycle": 11,
+      "timestamp": 1773860820524,
+      "entity": "checker",
+      "action": "checked 5 fragments"
+    },
+    {
+      "cycle": 11,
+      "timestamp": 1773860820524,
+      "entity": "cutter",
+      "action": "cut 1, spared 0"
+    },
+    {
+      "cycle": 11,
+      "timestamp": 1773860820524,
+      "entity": "reader",
+      "action": "annotated 3 fragments"
+    },
+    {
+      "cycle": 11,
+      "timestamp": 1773860820524,
+      "entity": "narrator",
+      "action": "narrated cycle 11"
+    },
+    {
+      "cycle": 11,
+      "timestamp": 1773860820524,
+      "entity": "logger",
+      "action": "LOG[11]:SUMMARY\n  writer: +1 fragments\n  checker: 5 evaluated, 0 flagged, 5 highlighted\n  cutter: 1 removed\n  reader: 3 annotations\n  document: 4 alive, 10 dead, 14 total"
+    },
+    {
+      "cycle": 12,
+      "timestamp": 1773860824650,
+      "entity": "writer",
+      "action": "sourced 2 fragments"
+    },
+    {
+      "cycle": 12,
+      "timestamp": 1773860824651,
+      "entity": "checker",
+      "action": "checked 6 fragments"
+    },
+    {
+      "cycle": 12,
+      "timestamp": 1773860824651,
+      "entity": "cutter",
+      "action": "cut 1, spared 0"
+    },
+    {
+      "cycle": 12,
+      "timestamp": 1773860824651,
+      "entity": "reader",
+      "action": "annotated 3 fragments"
+    },
+    {
+      "cycle": 12,
+      "timestamp": 1773860824651,
+      "entity": "narrator",
+      "action": "narrated cycle 12"
+    },
+    {
+      "cycle": 12,
+      "timestamp": 1773860824651,
+      "entity": "logger",
+      "action": "LOG[12]:SUMMARY\n  writer: +2 fragments\n  checker: 6 evaluated, 0 flagged, 6 highlighted\n  cutter: 1 removed\n  reader: 3 annotations\n  document: 5 alive, 11 dead, 16 total"
+    },
+    {
+      "cycle": 13,
+      "timestamp": 1773860830519,
+      "entity": "writer",
+      "action": "sourced 2 fragments"
+    },
+    {
+      "cycle": 13,
+      "timestamp": 1773860830521,
+      "entity": "checker",
+      "action": "checked 7 fragments"
+    },
+    {
+      "cycle": 13,
+      "timestamp": 1773860830521,
+      "entity": "cutter",
+      "action": "cut 2, spared 0"
+    },
+    {
+      "cycle": 13,
+      "timestamp": 1773860830521,
+      "entity": "reader",
+      "action": "annotated 3 fragments"
+    },
+    {
+      "cycle": 13,
+      "timestamp": 1773860830521,
+      "entity": "narrator",
+      "action": "narrated cycle 13"
+    },
+    {
+      "cycle": 13,
+      "timestamp": 1773860830521,
+      "entity": "logger",
+      "action": "LOG[13]:SUMMARY\n  writer: +2 fragments\n  checker: 7 evaluated, 0 flagged, 7 highlighted\n  cutter: 2 removed\n  reader: 3 annotations\n  document: 5 alive, 13 dead, 18 total"
     }
+  ],
+  "narrative": [
+    "Writer produced 2 fragments: \"A work of art encountered as a work of art is an experience, not a statement or an answer to a question.\", \"You misunderstood, and actually this misunderstanding itself is the problem.\".",
+    "Checker highlighted 16 for repetition.",
+    "Cutter killed 2: \"A work of art...\" (too long), \"You misunderstood, and actually...\" (too long).",
+    "Reader detected echo, void patterns.",
+    "Document holds 5 living fragments, 13 dead."
   ]
 }
