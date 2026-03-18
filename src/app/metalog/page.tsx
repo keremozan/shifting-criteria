@@ -63,22 +63,28 @@ export default function MetalogPage() {
       <div className="py-4 border-b border-gray-800">
         <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">index</div>
         <div className="space-y-1.5">
-          {threads.map((t, i) => (
-            <a
-              key={t.id}
-              href={`#thread-${t.id}`}
-              className="flex items-baseline gap-2 group"
-            >
-              <span className="text-[9px] text-gray-700 w-4 text-right shrink-0">{i + 1}</span>
-              <span
-                className="w-1 h-1 rounded-full shrink-0 mt-[5px]"
-                style={{ backgroundColor: getTagColor(t.tags[0]) + '80' }}
-              />
-              <span className="text-[10px] text-gray-500 group-hover:text-gray-300 transition-colors">
-                {t.summary}
-              </span>
-            </a>
-          ))}
+          {threads.map((t, i) => {
+            const startEntry = entries.find((e) => e.id === t.startEntry);
+            return (
+              <a
+                key={t.id}
+                href={`#thread-${t.id}`}
+                className="flex items-baseline gap-2 group"
+              >
+                <span className="text-[9px] text-gray-700 w-4 text-right shrink-0">{i + 1}</span>
+                <span
+                  className="w-1 h-1 rounded-full shrink-0 mt-[5px]"
+                  style={{ backgroundColor: getTagColor(t.tags[0]) + '80' }}
+                />
+                <span className="text-[10px] text-gray-500 group-hover:text-gray-300 transition-colors">
+                  {t.summary}
+                </span>
+                {startEntry && (
+                  <span className="text-[9px] text-gray-700">{startEntry.date} {startEntry.time}</span>
+                )}
+              </a>
+            );
+          })}
         </div>
       </div>
 

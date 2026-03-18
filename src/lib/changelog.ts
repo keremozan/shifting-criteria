@@ -338,4 +338,20 @@ export const changelog: ChangelogEntry[] = [
     title: 'Reader duplicate annotations',
     description: 'Reader now checks if a pattern annotation already exists on a fragment before adding another. Prevents echo/survival/void/density annotations accumulating over generations.',
   },
+  {
+    id: 41,
+    date: '2026-03-19',
+    time: '06:30',
+    tag: 'fix',
+    title: 'Checker timeline detail',
+    description: 'Operation timeline shows checker findings (flagged word count, tagged adjectives) instead of generic "evaluated". Writer says "sourced" instead of "produced".',
+  },
+  {
+    id: 42,
+    date: '2026-03-19',
+    time: '06:35',
+    tag: 'ui',
+    title: 'Thread index dates',
+    description: 'Metalog thread index entries now show the date and time of the first entry in each thread.',
+  },
 ];
