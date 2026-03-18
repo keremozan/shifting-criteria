@@ -1846,7 +1846,8 @@
         "Reader scanned the document. No patterns found.",
         "Document holds 1 living fragment, 0 dead."
       ]
-    }
+    },
+    "convention": "generation"
   },
   {
     "id": "snap-1773865653136",
@@ -2003,6 +2004,7 @@
         "Reader scanned the document. No patterns found.",
         "Document holds 1 active fragment, 0 removed."
       ]
-    }
+    },
+    "convention": "generation"
   }
 ]
