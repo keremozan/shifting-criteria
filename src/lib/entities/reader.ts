@@ -29,11 +29,9 @@ function hasFlagMark(frag: Fragment): boolean {
   return frag.marks.some((m) => m.type === 'flag');
 }
 
-function hasReaderCommentThisCycle(frag: Fragment, cycle: number): boolean {
+function hasReaderComment(frag: Fragment, pattern: string): boolean {
   return frag.marks.some(
-    (m) => m.entity === 'reader' && m.type === 'comment' && frag.operations.some(
-      (op) => op.entity === 'reader' && op.type === 'annotate' && op.cycle === cycle,
-    ),
+    (m) => m.entity === 'reader' && m.type === 'comment' && m.content.startsWith(pattern),
   );
 }
 
@@ -98,11 +96,11 @@ export function runReader(state: SystemState): SystemState {
     document = document.map((f) => (f.id === fragId ? updater(f) : f));
   }
 
-  // SURVIVAL: flagged but alive
+  // SURVIVAL: flagged but alive (annotate once per fragment)
   for (const frag of living) {
-    if (hasReaderCommentThisCycle(frag, cycle)) continue;
     if (annotatedThisCycle.has(frag.id)) continue;
     if (!hasFlagMark(frag)) continue;
+    if (hasReaderComment(frag, '∴surv')) continue;
 
     const age = cycle - frag.cycle;
     const notation = READER_PATTERNS.SURVIVAL.notation(frag.id, age);
@@ -112,7 +110,7 @@ export function runReader(state: SystemState): SystemState {
     foundAny = true;
   }
 
-  // ECHO: two living fragments share 3+ words
+  // ECHO: two living fragments share 3+ words (annotate once per pair)
   for (let i = 0; i < living.length; i++) {
     for (let j = i + 1; j < living.length; j++) {
       const a = living[i];
@@ -122,11 +120,11 @@ export function runReader(state: SystemState): SystemState {
 
       const notation = READER_PATTERNS.ECHO.notation(a.id, b.id, shared);
 
-      if (!annotatedThisCycle.has(a.id) && !hasReaderCommentThisCycle(a, cycle)) {
+      if (!annotatedThisCycle.has(a.id) && !hasReaderComment(a, `≈echo{${a.id}↔${b.id}}`)) {
         updateFragment(a.id, (f) => addAnnotation(f, notation, cycle, now));
         annotatedThisCycle.add(a.id);
       }
-      if (!annotatedThisCycle.has(b.id) && !hasReaderCommentThisCycle(b, cycle)) {
+      if (!annotatedThisCycle.has(b.id) && !hasReaderComment(b, `≈echo{${a.id}↔${b.id}}`)) {
         updateFragment(b.id, (f) => addAnnotation(f, notation, cycle, now));
         annotatedThisCycle.add(b.id);
       }
@@ -136,13 +134,12 @@ export function runReader(state: SystemState): SystemState {
     }
   }
 
-  // DENSITY: more than 10 living fragments
+  // DENSITY: more than 10 living fragments (annotate once)
   if (living.length > 10) {
     const notation = READER_PATTERNS.DENSITY.notation(living.length, allFragments.length);
-    // Annotate the first un-annotated living fragment as the density marker carrier
     for (const frag of living) {
       if (annotatedThisCycle.has(frag.id)) continue;
-      if (hasReaderCommentThisCycle(frag, cycle)) continue;
+      if (hasReaderComment(frag, '∥dens')) continue;
       updateFragment(frag.id, (f) => addAnnotation(f, notation, cycle, now));
       annotatedThisCycle.add(frag.id);
       break;
@@ -151,13 +148,12 @@ export function runReader(state: SystemState): SystemState {
     foundAny = true;
   }
 
-  // VOID: more dead than alive
+  // VOID: more removed than active (annotate once per fragment)
   if (dead.length > living.length) {
     const notation = READER_PATTERNS.VOID.notation(dead.length, living.length);
-    // Annotate the first un-annotated living fragment as the void marker carrier
     for (const frag of living) {
       if (annotatedThisCycle.has(frag.id)) continue;
-      if (hasReaderCommentThisCycle(frag, cycle)) continue;
+      if (hasReaderComment(frag, '∅void')) continue;
       updateFragment(frag.id, (f) => addAnnotation(f, notation, cycle, now));
       annotatedThisCycle.add(frag.id);
       break;
