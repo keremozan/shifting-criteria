@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import taxonomyData from '../../../data/taxonomy.json';
+import rulebookHighlights from '../../../data/rulebook-highlights.json';
+import PageHighlights from '@/components/PageHighlights';
 
 const tax = taxonomyData as Record<string, any>;
 
@@ -54,7 +56,7 @@ const SYSTEM_RULES = [
 
 export default function RulebookPage() {
   return (
-    <div className="min-h-screen flex flex-col max-w-2xl mx-auto px-6">
+    <div className="min-h-screen flex flex-col max-w-4xl mx-auto px-6">
       <header className="flex items-baseline justify-between py-5 border-b border-gray-800">
         <h1 className="text-[11px] text-gray-500 tracking-[0.15em] uppercase">
           rulebook
@@ -67,9 +69,10 @@ export default function RulebookPage() {
         </Link>
       </header>
 
-      <main className="flex-1 py-8 space-y-10">
+      <div className="flex gap-6 flex-1 relative" data-page-container="rulebook">
+      <main className="flex-1 py-8 space-y-10 min-w-0">
         {/* Characters */}
-        <section>
+        <section data-section-id="gen-entities">
           <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">generation entities</div>
           <div className="space-y-3">
             {[
@@ -97,7 +100,7 @@ export default function RulebookPage() {
         </section>
 
         <section>
-          <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">observers</div>
+          <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3" data-section-id="observers">observers</div>
           <div className="space-y-3">
             {[
               { name: 'architect', color: '#60a5fa', role: 'Responds in the metalog when kerem says ASIDE. Discusses the system from outside it. Follows the no-AI-slop rule.' },
@@ -124,7 +127,7 @@ export default function RulebookPage() {
         </section>
 
         {/* Taxonomy - active terms */}
-        <section>
+        <section data-section-id="taxonomy">
           <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">taxonomy</div>
           <div className="space-y-2">
             {Object.entries(tax).filter(([key]) => key !== '_deprecated').map(([key, val]: [string, any]) => (
@@ -165,7 +168,7 @@ export default function RulebookPage() {
         )}
 
         {/* Rules */}
-        <section>
+        <section data-section-id="rules">
           <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">rules</div>
           <div className="space-y-3">
             {SYSTEM_RULES.map((rule, i) => (
@@ -177,6 +180,9 @@ export default function RulebookPage() {
           </div>
         </section>
       </main>
+
+      <PageHighlights pageKey="rulebook" authorHighlights={rulebookHighlights as any[]} />
+      </div>
     </div>
   );
 }

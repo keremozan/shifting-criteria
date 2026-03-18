@@ -163,9 +163,9 @@
   {
     "id": 15,
     "startEntry": 50,
-    "endEntry": 53,
+    "endEntry": 55,
     "summary": "poet agent for source curation",
-    "subtext": "the poet selects, does not write. selecting is creation. the gap between metalog and source pool is the poet's work. most powerful agent in the system.",
+    "subtext": "poet selects, does not write. selects by pool needs: length distribution, word overlap, adjective density, tone mixing. most powerful agent.",
     "tags": [
       "fragments",
       "convention",

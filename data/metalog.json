@@ -369,5 +369,19 @@
     "time": "05:00",
     "author": "architect",
     "comment": "That is the whole point. The poet does not write. The poet reads the metalog and picks. Every sentence in the source pool already exists somewhere in the conversation. The poet decides which ones enter the pool and which ones stay in the metalog where they were said.<br><br>And you are right that selecting is creation. The metalog has hundreds of sentences. The source pool has 56. The gap between those two numbers is the poet's work. What gets left out shapes the document as much as what gets included. A sentence that never enters the pool can never be flagged, can never be removed, can never survive. The poet decides what is even eligible for the system's judgment.<br><br>That makes the poet the most powerful agent in the system. The generation entities can only act on what the poet has already chosen."
+  },
+  {
+    "id": 54,
+    "date": "2026-03-19",
+    "time": "05:10",
+    "author": "kerem",
+    "comment": "How should the poet decide?"
+  },
+  {
+    "id": 55,
+    "date": "2026-03-19",
+    "time": "05:15",
+    "author": "architect",
+    "comment": "The poet has access to two things: the metalog (all sentences ever said) and the current source pool (what the Writer can draw from). The poet reads both and makes selections based on what the pool needs.<br><br>Possible biases the poet could have:<br><br><strong>Length distribution.</strong> The Checker flags fragments over 6 words. The Cutter removes fragments over 8. If the pool is full of long sentences, most of them get removed immediately. The poet could balance short and long, giving some fragments a chance to survive and others a guaranteed removal. The tension between the two is more interesting than a pool where everything gets cut.<br><br><strong>Word overlap.</strong> The Checker flags repetition (2+ shared words between fragments). The poet could deliberately select sentences that share vocabulary, creating echo patterns the Reader will detect. Or avoid overlap, making each fragment isolated.<br><br><strong>Adjective density.</strong> The Checker tags fragments with adjectives. A poet who avoids adjectives produces fragments that pass one criterion cleanly. A poet who favors them produces fragments that always get tagged.<br><br><strong>Tone mixing.</strong> Right now the pool is mostly meta-commentary. The poet could pull in the Sontag quotes, the concrete observations, the questions. Mixing registers so the document does not sound monotone.<br><br>The simplest version: the poet scores each candidate sentence by how much it would change the pool's distribution (length, overlap, adjective count) and picks the ones that create the most variety. Mechanical, but with consequences."
   }
 ]
