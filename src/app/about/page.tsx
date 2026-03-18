@@ -21,15 +21,17 @@ export default function AboutPage() {
         </div>
 
         <p>
-          A document lives inside a group of autonomous agents. Each cycle, new fragments
+          A document lives inside a group of autonomous agents. Each{' '}
+          <s className="text-gray-600">cycle</s> generation, new fragments
           enter from a pool of sourced sentences. Other agents evaluate these fragments against
           a set of formal criteria and remove the ones that fail. The criteria shift over time,
-          so a fragment that passes in one cycle may fail in the next.
+          so a fragment that passes in one generation may fail in the next.
         </p>
 
         <p>
           The source material comes from a real conversation between the artist and an AI
-          architect, recorded during the making of this project. That conversation is visible
+          architect, recorded during the making of this project. A poet agent reads the
+          conversation and selects which sentences enter the pool. That conversation is visible
           in the metalog, alongside the artist's highlights and annotations. The work, the
           discussion about the work, and the marks left on that discussion are all presented
           together.

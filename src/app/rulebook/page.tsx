@@ -99,16 +99,37 @@ export default function RulebookPage() {
           </div>
         </section>
 
-        <section>
-          <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3" data-section-id="observers">observers</div>
+        <section data-section-id="observers">
+          <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">observers</div>
           <div className="space-y-3">
             {[
               { name: 'architect', color: '#60a5fa', role: 'Responds in the metalog when kerem says ASIDE. Discusses the system from outside it. Follows the no-AI-slop rule.' },
-              { name: 'poet', color: '#f9a8d4', role: 'Reads the metalog and selects sentences for the source pool. Does not write. The gap between the metalog and the source pool is the poet\'s work. Most powerful agent in the system.', oldRole: 'Kerem picks which sentences enter the source pool.' },
               { name: 'threads', color: '#f472b6', role: 'Groups metalog entries into conversation threads. Adds summaries, subtexts, and tags. Maintains the thread index.' },
               { name: 'editor', color: '#34d399', role: 'Revises display language from gen 4 onward. Strikes through "dead", "killed", "alive" and suggests replacements. Operates on presentation only.', oldRole: 'Revises display language from run 4 onward. Strikes through "dead", "killed", "alive" and suggests replacements. Operates on presentation only.' },
               { name: 'taxonomist', color: '#fb923c', role: 'Classifies system concepts and maintains the vocabulary. Determines how terms are displayed across contexts.', oldRole: 'Maintains the vocabulary file. Defines how terms are displayed across contexts. "Cycle" becomes "run", fragments get "c" prefix, headers get "#" prefix.' },
-              { name: 'kerem', color: '#e5e7eb', role: 'The artist. Highlights and comments on the metalog. These marks are visible to all viewers but only kerem can create them.' },
+              { name: 'kerem', color: '#e5e7eb', role: 'The artist. Highlights and comments on the metalog and rulebook. These marks are visible to all viewers but only kerem can create them.' },
+            ].map((c: any) => (
+              <div key={c.name} className="flex gap-3">
+                <div className="flex items-center gap-1.5 shrink-0 w-20">
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: c.color }} />
+                  <span className="text-[11px] font-medium" style={{ color: c.color }}>{c.name}</span>
+                </div>
+                <div className="text-[10px] leading-relaxed">
+                  {c.oldRole && (
+                    <div className="text-gray-700 line-through mb-1">{c.oldRole}</div>
+                  )}
+                  <div className="text-gray-500">{c.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section data-section-id="curators">
+          <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">curators</div>
+          <div className="space-y-3">
+            {[
+              { name: 'poet', color: '#f9a8d4', role: 'Reads the metalog and selects sentences for the source pool. Scores candidates by length variety, word overlap, adjective density, and tone. Does not write. The gap between the metalog and the source pool is the poet\'s work.', oldRole: 'Kerem picks which sentences enter the source pool.' },
             ].map((c: any) => (
               <div key={c.name} className="flex gap-3">
                 <div className="flex items-center gap-1.5 shrink-0 w-20">

@@ -6,6 +6,7 @@ const TAG_COLORS: Record<ChangeTag, string> = {
   ui: '#60a5fa',
   page: '#4ade80',
   system: '#fbbf24',
+  fix: '#f87171',
 };
 
 function groupByDate(entries: typeof changelog) {

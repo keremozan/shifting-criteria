@@ -1,4 +1,4 @@
-export type ChangeTag = 'entity' | 'ui' | 'page' | 'system';
+export type ChangeTag = 'entity' | 'ui' | 'page' | 'system' | 'fix';
 
 export interface ChangelogEntry {
   id: number;
@@ -304,5 +304,29 @@ export const changelog: ChangelogEntry[] = [
     tag: 'ui',
     title: 'Mobile sticky run button',
     description: 'Fixed bottom bar on mobile with prominent run button + reset. Desktop controls hidden on small screens. Nav flattened.',
+  },
+  {
+    id: 37,
+    date: '2026-03-19',
+    time: '05:20',
+    tag: 'entity',
+    title: 'Poet agent',
+    description: 'Poet reads the metalog and scores candidate sentences by length variety, word overlap, adjective density, and tone. Selects top candidates for the source pool. Does not write. Page at /poet (not in nav). New category: curators (between cycle entities and observers).',
+  },
+  {
+    id: 38,
+    date: '2026-03-19',
+    time: '05:20',
+    tag: 'fix',
+    title: 'Rulebook highlight fix',
+    description: 'Fixed data-section-id placement on observers section. Rulebook comments now work correctly.',
+  },
+  {
+    id: 39,
+    date: '2026-03-19',
+    time: '05:20',
+    tag: 'ui',
+    title: 'Three agent categories',
+    description: 'Agents split into three groups: generation entities (run in pipeline), observers (annotate without changing), curators (shape inputs between sessions). Poet moved from observers to curators.',
   },
 ];

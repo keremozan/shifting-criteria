@@ -183,11 +183,26 @@ export default function Home() {
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               {[
                 { name: 'architect', color: '#60a5fa' },
-                { name: 'poet', color: '#f9a8d4' },
                 { name: 'threads', color: '#f472b6' },
                 { name: 'editor', color: '#34d399' },
                 { name: 'taxonomist', color: '#fb923c' },
                 { name: 'kerem', color: '#e5e7eb' },
+              ].map((o) => (
+                <div key={o.name} className="flex items-center gap-1.5 py-1">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: o.color }} />
+                  <span className="text-[11px]" style={{ color: o.color }}>{o.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="hidden sm:block w-px bg-gray-800" />
+
+          <div>
+            <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">curators</div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              {[
+                { name: 'poet', color: '#f9a8d4' },
               ].map((o) => (
                 <div key={o.name} className="flex items-center gap-1.5 py-1">
                   <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ backgroundColor: o.color }} />
