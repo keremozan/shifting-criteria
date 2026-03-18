@@ -22,32 +22,37 @@ export default function DiagramsPage() {
         {diagrams.length === 0 && (
           <div className="text-[10px] text-gray-600">no diagrams yet.</div>
         )}
-        {diagrams.map((d: any) => (
-          <div key={d.id} className="py-4 border-b border-gray-800/50">
-            <div className="flex items-baseline gap-3 mb-4">
-              <span className="text-[11px] text-gray-200 font-medium">{d.title}</span>
-              <span className="text-[9px] text-gray-600">{d.date} {d.time}</span>
-              {d.metalogEntryId && (
-                <Link
-                  href="/metalog"
-                  className="text-[9px] text-gray-600 hover:text-gray-400 transition-colors"
-                >
-                  metalog #{d.metalogEntryId}
-                </Link>
-              )}
-            </div>
-            {d.type === 'ascii' ? (
-              <pre className="text-[10px] text-gray-500 leading-[1.5] overflow-x-auto">
+        {diagrams.map((d: any) => {
+          const isSuperseded = !!d.supersededBy;
+
+          return (
+            <div key={d.id} className="py-4 border-b border-gray-800/50">
+              <div className="flex items-baseline gap-3 mb-4">
+                <span className={`text-[11px] font-medium ${isSuperseded ? 'text-gray-600 line-through' : 'text-gray-200'}`}>
+                  {d.title}
+                </span>
+                <span className="text-[9px] text-gray-600">{d.date} {d.time}</span>
+                {d.metalogEntryId && (
+                  <Link
+                    href="/metalog"
+                    className="text-[9px] text-gray-600 hover:text-gray-400 transition-colors"
+                  >
+                    metalog #{d.metalogEntryId}
+                  </Link>
+                )}
+                {isSuperseded && (
+                  <span className="text-[9px] text-gray-600">superseded by #{d.supersededBy}</span>
+                )}
+                {d.supersedes && (
+                  <span className="text-[9px] text-gray-600">supersedes #{d.supersedes}</span>
+                )}
+              </div>
+              <pre className={`text-[10px] leading-[1.5] overflow-x-auto ${isSuperseded ? 'text-gray-700 opacity-50' : 'text-gray-500'}`}>
                 {d.content}
               </pre>
-            ) : (
-              <div
-                className="font-mono"
-                dangerouslySetInnerHTML={{ __html: d.html || d.content }}
-              />
-            )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </main>
     </div>
   );
