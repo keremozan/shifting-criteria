@@ -173,8 +173,10 @@ export default function Home() {
             <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">observers</div>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               {[
+                { name: 'architect', color: '#60a5fa' },
                 { name: 'threads', color: '#f472b6' },
                 { name: 'editor', color: '#34d399' },
+                { name: 'taxonomist', color: '#fb923c' },
                 { name: 'kerem', color: '#e5e7eb' },
               ].map((o) => (
                 <div key={o.name} className="flex items-center gap-1.5 py-1">
