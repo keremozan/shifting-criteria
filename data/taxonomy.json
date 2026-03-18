@@ -1,45 +1,65 @@
 {
-  "run": {
-    "definition": "one execution of the engine, writer through logger",
+  "generation": {
+    "definition": "one full pass of the engine, writer through logger. classified as a generation because the document changes shape under shifting conditions, not because it converges toward a goal.",
+    "replaces": "run, cycle",
     "display": {
-      "header": "#",
-      "narrative": "run",
-      "snapshot": "#",
-      "fragment": "c"
+      "header": "gen-",
+      "narrative": "gen",
+      "snapshot": "gen-",
+      "fragment": "g"
     }
   },
-  "runCount": {
-    "definition": "how many times the engine has executed",
-    "example": "#12"
+  "generationLabel": {
+    "definition": "the full state label combining generation number, active count, and removed count.",
+    "format": "gen-N:Xa:Yr",
+    "example": "gen-8:3a:2r"
   },
   "origin": {
-    "definition": "the run during which a fragment was born",
-    "example": "c3"
+    "definition": "the generation during which a fragment was born.",
+    "example": "g3"
   },
   "fragment": {
-    "definition": "a sourced sentence living in the document"
+    "definition": "a sourced sentence in the document."
   },
   "active": {
-    "definition": "fragment that has not been removed",
+    "definition": "fragment that has not been removed.",
     "replaces": "alive"
   },
   "removed": {
-    "definition": "fragment that the cutter eliminated",
-    "replaces": "dead"
+    "definition": "fragment that the cutter eliminated.",
+    "replaces": "dead, killed"
   },
   "flagged": {
-    "definition": "fragment marked by the checker against a criterion"
+    "definition": "fragment marked by the checker against a criterion."
   },
   "surviving": {
-    "definition": "fragment that has been flagged but persists beyond one run"
+    "definition": "fragment that has been flagged but persists beyond one generation."
   },
   "sourced": {
-    "definition": "pulled from the source pool into the document by the writer"
+    "definition": "pulled from the source pool into the document by the writer."
   },
   "criteria": {
-    "definition": "the three formal rules fragments are evaluated against"
+    "definition": "the three formal rules fragments are evaluated against."
   },
   "shift": {
-    "definition": "a random change to one criterion threshold, occurs every 5 runs"
+    "definition": "a random change to one criterion threshold, occurs every 5 generations."
+  },
+
+  "_deprecated": {
+    "run": {
+      "definition": "one execution of the engine, writer through logger",
+      "supersededBy": "generation",
+      "reason": "reclassified. the system does not iterate toward a goal, it produces generations under shifting conditions."
+    },
+    "runCount": {
+      "definition": "how many times the engine has executed",
+      "supersededBy": "generationLabel",
+      "reason": "replaced by a richer label that includes active and removed counts."
+    },
+    "cycle": {
+      "definition": "original term for one engine pass",
+      "supersededBy": "generation",
+      "reason": "ambiguous. meant three different things: the act of running, the count, and the origin of a fragment."
+    }
   }
 }

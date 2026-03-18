@@ -9,7 +9,7 @@ import DocumentView from '@/components/DocumentView';
 import EntityPanel from '@/components/EntityPanel';
 import SystemLog from '@/components/SystemLog';
 import { editorRevise } from '@/lib/editor';
-import { fmtRun } from '@/lib/taxonomy';
+import { fmtGen, fmtGenShort } from '@/lib/taxonomy';
 
 const ENTITY_ORDER: EntityId[] = ['writer', 'checker', 'cutter', 'reader', 'narrator', 'logger'];
 
@@ -67,16 +67,10 @@ export default function Home() {
             <h1 className="text-[11px] text-gray-500 tracking-[0.15em] uppercase">
               ETSC
             </h1>
-            <span
-              className="text-[10px] text-gray-600"
-              dangerouslySetInnerHTML={{
-                __html: editorRevise(`${aliveCount} alive / ${deadCount} dead`, state.cycle)
-              }}
-            />
           </div>
           <div className="flex items-baseline gap-2">
             <span className="text-[10px] text-gray-500">
-              {fmtRun(state.cycle)}
+              {fmtGen(state.cycle, aliveCount, deadCount)}
             </span>
             <button
               onClick={handleSnapshot}
@@ -116,7 +110,7 @@ export default function Home() {
       {state.narrative && state.narrative.length > 0 && (
         <div className="py-3 border-b border-gray-800">
           <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-1.5">
-            {fmtRun(state.cycle, 'narrative')}
+            {fmtGen(state.cycle, aliveCount, deadCount)}
           </div>
           <div className="space-y-0.5">
             {state.narrative.map((line, i) => (

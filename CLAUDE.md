@@ -51,8 +51,11 @@ Next.js, TypeScript, Tailwind. Runs on port 3456 (`npm run dev`).
 
 Changelog sits outside this stack.
 
-### Archival rule
-Saved snapshots preserve the exact state and language of their moment. New rules, taxonomy changes, and editor revisions do not retroactively alter them.
+### Visibility rule
+Nothing is silently replaced. When a term, rule, or definition changes, the old version remains in the document with a strikethrough. The new version appears alongside it. This applies to the rulebook, taxonomy, character descriptions, and any authored content. The history of decisions is part of the piece.
+
+### Forward-only rule
+Changes to terminology, taxonomy, editor behavior, or system rules apply to new generations only. Old snapshots, old metalog entries, and archived states keep their original language. The system does not rewrite its past.
 
 ## Convention: ASIDE
 
