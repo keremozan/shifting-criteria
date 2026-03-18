@@ -115,7 +115,7 @@ export default function FragmentView({ fragment, currentCycle }: { fragment: Fra
         {style.label && (
           <span className="text-[8px] uppercase tracking-wider shrink-0 px-1 py-px rounded"
             style={{ color: style.border, backgroundColor: `${style.border}15`, border: `1px solid ${style.border}30` }}
-            dangerouslySetInnerHTML={{ __html: editorRevise(style.label, fragment.cycle) }}
+            dangerouslySetInnerHTML={{ __html: editorRevise(style.label, currentCycle) }}
           />
         )}
         <span className={`text-sm ${style.textClass}`}>{fragment.content}</span>
@@ -123,7 +123,7 @@ export default function FragmentView({ fragment, currentCycle }: { fragment: Fra
 
       {uniqueMarks.length > 0 && (
         <div className="ml-8 mt-1 flex flex-wrap gap-x-2 gap-y-1">
-          {uniqueMarks.map((m, i) => <MarkBadge key={i} mark={m} cycle={fragment.cycle} />)}
+          {uniqueMarks.map((m, i) => <MarkBadge key={i} mark={m} cycle={currentCycle} />)}
           {checkerCycles > 1 && <span className="text-[9px] text-gray-600">checked {checkerCycles}x</span>}
         </div>
       )}
