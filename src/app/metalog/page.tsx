@@ -60,8 +60,26 @@ export default function MetalogPage() {
       </header>
 
       {/* Thread index */}
-      <div className="py-4 border-b border-gray-800">
-        <div className="text-[9px] text-gray-600 uppercase tracking-wider mb-3">index</div>
+      <div className="py-4 border-b border-gray-800" id="metalog-index">
+        <div className="flex items-baseline justify-between mb-3">
+          <span className="text-[9px] text-gray-600 uppercase tracking-wider">index</span>
+          {/* All unique tags */}
+          <div className="flex flex-wrap gap-1.5">
+            {[...new Set(threads.flatMap((t) => t.tags))].map((tag) => (
+              <a
+                key={tag}
+                href={`#metalog-index`}
+                className="text-[8px] px-1.5 py-0.5 rounded tracking-wide hover:opacity-100 opacity-60 transition-opacity"
+                style={{
+                  color: getTagColor(tag),
+                  backgroundColor: getTagColor(tag) + '15',
+                }}
+              >
+                {tag}
+              </a>
+            ))}
+          </div>
+        </div>
         <div className="space-y-1.5">
           {threads.map((t, i) => {
             const startEntry = entries.find((e) => e.id === t.startEntry);
@@ -159,6 +177,14 @@ export default function MetalogPage() {
 
         <HighlightLayer />
       </div>
+
+      {/* Back to index button */}
+      <a
+        href="#metalog-index"
+        className="fixed bottom-4 right-4 z-40 text-[9px] text-gray-600 bg-[#111] border border-gray-800 px-2 py-1 rounded hover:text-gray-300 hover:border-gray-700 transition-colors"
+      >
+        &#9650; index
+      </a>
     </div>
   );
 }
